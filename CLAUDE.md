@@ -23,6 +23,6 @@ Web de una página en HTML estático, sin compilación. Se publica con GitHub Pa
 - **Sin teléfono ni WhatsApp**: el móvil es personal. Contacto público: hola@mirlastudio.es e Instagram @mirlastudio.es.
 - **No inventar clientes, trabajos, reseñas ni cifras.** No mencionar SG Ingenieros.
 - Mensaje: "webs de todo tipo"; las reservas online son solo un ejemplo más.
-- Contacto: formulario con FormSubmit (envía a hola@mirlastudio.es), más email e Instagram. Clientes fundadores: sin pedir reseña ni permiso a cambio del descuento.
+- Contacto: formulario con Web3Forms (envía a hola@mirlastudio.es; la access key es pública), más email e Instagram. Clientes fundadores: sin pedir reseña ni permiso a cambio del descuento.
 - Aviso legal: titular Sergio Pastor Castellón, NIF y solo "Murcia" como localidad.
 - La web debe verse bien en móvil (sin scroll horizontal) y en modo oscuro.

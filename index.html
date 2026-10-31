@@ -427,12 +427,12 @@ section{scroll-margin-top:84px}
       <span class="contact-orb" aria-hidden="true"></span>
       <p class="kicker">Contacto</p>
       <h2>Cuéntame qué necesitas.</h2>
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/hola@mirlastudio.es" method="POST">
-        <input type="hidden" name="_subject" value="Nuevo mensaje desde mirlastudio.es">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://mirlastudio.es/#contacto">
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde mirlastudio.es">
+        <input type="hidden" name="from_name" value="Web Mirla Studio">
+        <input type="hidden" name="redirect" value="https://mirlastudio.es/#contacto">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field full"><label for="f-msg">¿Qué necesitas?</label><textarea id="f-msg" name="mensaje" rows="4" required placeholder="Cuéntame tu negocio y qué te gustaría tener."></textarea></div>
@@ -483,10 +483,10 @@ section{scroll-margin-top:84px}
   if (form && window.fetch){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      if (form._honey && form._honey.value) return;
+      if (form.botcheck && form.botcheck.checked) return;
       sendBtn.disabled = true; status.textContent = 'Enviando…';
-      fetch('https://formsubmit.co/ajax/hola@mirlastudio.es', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-        .then(function(r){ return r.json().then(function(d){ if (!r.ok || String(d.success) !== 'true') throw new Error(d.message || 'error'); }); })
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function(r){ return r.json().then(function(d){ if (!r.ok || !d.success) throw new Error(d.message || 'error'); }); })
         .then(function(){ form.reset(); status.textContent = '¡Gracias! Te respondo lo antes posible.'; })
         .catch(function(){ status.innerHTML = 'No se ha podido enviar. Escríbeme a <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>.'; })
         .then(function(){ sendBtn.disabled = false; });
