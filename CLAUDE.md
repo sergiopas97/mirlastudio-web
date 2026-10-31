@@ -5,6 +5,7 @@ Web de una página en HTML estático, sin compilación. Se publica con GitHub Pa
 ## Archivos
 - `index.html`: página principal. CSS y JS van dentro del propio archivo.
 - `aviso-legal.html`: aviso legal y privacidad (LSSI y RGPD).
+- `404.html`: página de error (GitHub Pages la usa sola).
 - `favicon.svg`, `logo.png`, `apple-touch-icon.png`, `og.png`: iconos e imagen para compartir.
 - `robots.txt`, `sitemap.xml`: SEO. Si añades una página, añádela al sitemap.
 - `seo/`: copia de referencia de las etiquetas SEO.
