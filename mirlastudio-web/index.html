@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mirla Studio · Diseño web y SEO local en Murcia</title>
+<meta name="description" content="Webs de todo tipo, ficha de Google y SEO local para negocios de Murcia. Precio cerrado por escrito y seguimiento cada mes.">
+<link rel="canonical" href="https://mirlastudio.es/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Mirla Studio">
+<meta property="og:title" content="Mirla Studio · Diseño web y SEO local en Murcia">
+<meta property="og:description" content="Webs de todo tipo, ficha de Google y SEO local para negocios de Murcia. Precio cerrado por escrito y seguimiento cada mes.">
+<meta property="og:url" content="https://mirlastudio.es/">
+<meta property="og:image" content="https://mirlastudio.es/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://mirlastudio.es/#negocio",
+  "name": "Mirla Studio",
+  "url": "https://mirlastudio.es/",
+  "email": "hola@mirlastudio.es",
+  "logo": "https://mirlastudio.es/logo.png",
+  "image": "https://mirlastudio.es/og.png",
+  "description": "Diseño web de todo tipo, ficha de Google, SEO local y software a medida para negocios de Murcia, con precio cerrado y seguimiento mensual.",
+  "founder": { "@type": "Person", "name": "Sergio Pastor" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressRegion": "Región de Murcia", "addressCountry": "ES" },
+  "areaServed": [
+    { "@type": "City", "name": "Murcia" },
+    { "@type": "City", "name": "Cartagena" },
+    { "@type": "City", "name": "Lorca" },
+    { "@type": "City", "name": "Molina de Segura" },
+    { "@type": "City", "name": "Alcantarilla" },
+    { "@type": "AdministrativeArea", "name": "Región de Murcia" }
+  ],
+  "sameAs": ["https://www.instagram.com/mirlastudio.es/"]
+}
+</script>
+<!-- sameAs: añadir LinkedIn, Facebook y la ficha de Google cuando existan. Teléfono: no publicar el móvil personal. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F7F3EC; --paper-2:#EFEADF; --ink:#17150F; --ink-2:#5B5549; --ink-3:#8C8577;
+  --line:#DED7CA; --pico:#E07B12; --pico-text:#A85608; --on-pico:#17150F; --card:#FFFFFF;
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gutter:clamp(16px,4vw,56px); --maxw:1280px; --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F0E0B; --paper-2:#191711; --ink:#F2EEE5; --ink-2:#A9A294; --ink-3:#6E675A;
+    --line:#2B2822; --pico:#F2A03D; --pico-text:#F2A03D; --on-pico:#17150F; --card:#17150F;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:84px}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6; overflow-x:clip; -webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pico); outline-offset:3px; border-radius:4px}
+h1,h2,h3{margin:0; text-wrap:balance; font-family:var(--f-display); font-weight:600; letter-spacing:-.03em}
+p{margin:0}
+em{font-style:italic; color:var(--pico-text)}
+.page{padding-inline:var(--gutter); max-width:calc(var(--maxw) + 2*var(--gutter)); margin-inline:auto}
+.kicker{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); display:flex; align-items:center; gap:.6rem}
+.kicker::before{content:""; width:26px; height:1px; background:currentColor; flex:none}
+
+.site-header{position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:14px; margin-inline:calc(-1*var(--gutter)); padding-inline:var(--gutter); background:color-mix(in srgb, var(--paper) 82%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent)}
+.logo{display:flex; align-items:center; gap:.55rem; text-decoration:none; font-family:var(--f-display); font-weight:600; font-size:1.5rem; letter-spacing:-.035em}
+.logo svg{width:26px; height:26px; flex:none}
+.nav{display:flex; align-items:center; gap:clamp(.9rem,2vw,1.7rem)}
+.nav a{text-decoration:none; font-size:.92rem; color:var(--ink-2); position:relative; padding-block:4px; transition:color .3s var(--ease)}
+.nav a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--ink); transform:scaleX(0); transform-origin:right; transition:transform .45s var(--ease)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1); transform-origin:left}
+.header-right{display:flex; align-items:center; gap:.7rem}
+.btn{--bg:var(--ink); --fg:var(--paper); display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; cursor:pointer; font:600 .95rem/1 var(--f-body); letter-spacing:-.01em; background:var(--bg); color:var(--fg); border:1px solid var(--bg); padding:.9rem 1.3rem; border-radius:999px; position:relative; overflow:hidden; isolation:isolate; transition:color .4s var(--ease), border-color .4s var(--ease)}
+.btn::before{content:""; position:absolute; inset:0; z-index:-1; background:var(--pico); border-radius:inherit; transform:translateY(101%); transition:transform .45s var(--ease)}
+.btn:hover{color:var(--on-pico); border-color:var(--pico)}
+.btn:hover::before{transform:translateY(0)}
+.btn .arr{display:inline-block; transition:transform .45s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.ghost{--bg:transparent; --fg:var(--ink); border-color:var(--line)}
+.btn.small{padding:.68rem 1.05rem; font-size:.85rem}
+.menu-btn{display:none; background:none; border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:.55rem .9rem; font:500 .82rem var(--f-mono); cursor:pointer}
+.mobile-nav{position:fixed; inset:0; z-index:49; background:var(--paper); padding:84px var(--gutter) 40px; display:flex; flex-direction:column}
+.mobile-nav a{font-family:var(--f-display); font-size:clamp(2rem,9vw,3rem); font-weight:600; letter-spacing:-.04em; text-decoration:none; border-bottom:1px solid var(--line); padding-block:.35rem}
+@media (max-width: 880px){ .nav, .header-right .btn{display:none} .menu-btn{display:inline-flex} }
+
+.hero{position:relative; padding-block:clamp(48px,9vw,104px) clamp(36px,6vw,64px)}
+#bandada{position:absolute; inset:0 calc(-1*var(--gutter)); width:calc(100% + 2*var(--gutter)); height:100%; pointer-events:none; z-index:0; -webkit-mask-image:linear-gradient(100deg, rgba(0,0,0,.12) 20%, #000 60%); mask-image:linear-gradient(100deg, rgba(0,0,0,.12) 20%, #000 60%)}
+.hero-inner{position:relative; z-index:1; display:grid; gap:clamp(26px,4vw,44px)}
+.eyebrow{font-family:var(--f-mono); font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); display:flex; align-items:center; gap:.7rem}
+.pulse{width:9px; height:9px; border-radius:50%; background:var(--pico); position:relative; flex:none}
+.pulse::after{content:""; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--pico); animation:ping 2.6s var(--ease) infinite}
+@keyframes ping{0%{transform:scale(.4); opacity:1} 100%{transform:scale(1.8); opacity:0}}
+.hero-title{font-size:clamp(2.9rem,10vw,8.6rem); line-height:.92; letter-spacing:-.045em; font-weight:600}
+.hero-title .line{display:block; overflow:hidden; padding-bottom:.06em; margin-bottom:-.06em}
+.hero-title .line > span{display:inline-block; will-change:transform}
+.hero-foot{display:grid; grid-template-columns:minmax(0,1.05fr) auto; gap:2rem; align-items:end}
+.lead{font-size:clamp(1.05rem,1.6vw,1.3rem); line-height:1.5; max-width:38ch; color:var(--ink-2)}
+.lead strong{color:var(--ink); font-weight:600}
+.cta-row{display:flex; flex-wrap:wrap; gap:.7rem}
+@media (max-width: 760px){ .hero-foot{grid-template-columns:1fr} }
+.hero-facts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); gap:0; margin:0}
+.hero-facts > div{padding:1.1rem 1rem 0 0; display:grid; gap:.35rem; min-width:0}
+.hero-facts > div + div{padding-left:1rem; border-left:1px solid var(--line)}
+.hero-facts dt{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); order:2}
+.hero-facts dd{margin:0; font-family:var(--f-display); font-size:clamp(1.1rem,2.4vw,1.75rem); font-weight:600; letter-spacing:-.03em; line-height:1.15}
+
+.band{margin-inline:calc(-1*var(--gutter)); overflow:hidden; border-block:1px solid var(--line); padding-block:clamp(13px,2vw,20px); background:var(--paper-2)}
+.band-track{display:flex; width:max-content; animation:marquee 34s linear infinite}
+.band-group{display:flex; align-items:center; gap:clamp(1.1rem,3vw,2.4rem); padding-right:clamp(1.1rem,3vw,2.4rem)}
+.band-group span{font-family:var(--f-display); font-size:clamp(1.6rem,4.6vw,3.6rem); font-weight:600; letter-spacing:-.035em; white-space:nowrap; line-height:1}
+.band-group span:nth-child(4n+3){font-style:italic; font-weight:400; color:var(--pico-text)}
+.band-group i{width:clamp(12px,1.8vw,19px); height:clamp(12px,1.8vw,19px); border-radius:50%; border:2px solid var(--pico); flex:none; position:relative}
+.band-group i::after{content:""; position:absolute; inset:28%; border-radius:50%; background:var(--pico)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.band-skew{will-change:transform}
+html.lenis, html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.cursor{position:fixed; left:0; top:0; z-index:1000; pointer-events:none; width:34px; height:34px; margin:-17px 0 0 -17px; border-radius:50%; border:1px solid var(--ink); opacity:0; transition:width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), opacity .3s}
+.cursor.on{opacity:1}
+.cursor.grow{width:62px; height:62px; margin:-31px 0 0 -31px; background:color-mix(in srgb, var(--pico) 20%, transparent); border-color:var(--pico)}
+@media (pointer: coarse){ .cursor{display:none} }
+
+section{scroll-margin-top:84px}
+.sec-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:1.4rem 2rem; align-items:end; margin-bottom:clamp(30px,4.5vw,56px)}
+.sec-head h2{font-size:clamp(2rem,5vw,4.2rem); line-height:.98; letter-spacing:-.04em}
+@media (max-width: 760px){ .sec-head{grid-template-columns:1fr} }
+.packs{padding-block:clamp(66px,10vw,128px)}
+.pack-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
+.pack{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) auto; align-items:center; gap:1rem 1.5rem; padding:clamp(20px,2.6vw,34px) clamp(6px,1.2vw,18px); border-bottom:1px solid var(--line); position:relative; isolation:isolate; overflow:hidden; transition:color .45s var(--ease)}
+.pack::before{content:""; position:absolute; inset:0; background:var(--ink); z-index:-1; transform:scaleY(0); transform-origin:bottom; transition:transform .55s var(--ease)}
+.pack:hover{color:var(--paper)}
+.pack:hover::before{transform:scaleY(1)}
+.pack:hover .pack-tag, .pack:hover .pack-desc{color:inherit; opacity:.85}
+.pack:hover .pack-price{color:var(--pico)}
+.pack-head{display:grid; gap:.45rem; min-width:0}
+.pack-tag{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); transition:color .45s var(--ease)}
+.pack-name{font-family:var(--f-display); font-size:clamp(1.9rem,5vw,4.1rem); font-weight:600; letter-spacing:-.045em; line-height:1}
+.pack-desc{color:var(--ink-2); max-width:40ch; min-width:0; transition:color .45s var(--ease)}
+.pack-price{font-family:var(--f-display); font-size:clamp(1.2rem,2.3vw,1.9rem); font-weight:600; letter-spacing:-.03em; white-space:nowrap; color:var(--pico-text); transition:color .45s var(--ease)}
+@media (max-width: 880px){ .pack{grid-template-columns:minmax(0,1fr) auto} .pack-desc{grid-column:1 / -1; grid-row:2} .pack-price{align-self:start} }
+.keep{padding-block:clamp(56px,8vw,100px); border-top:1px solid var(--line)}
+.pack-price small{font-family:var(--f-body); font-size:.8rem; font-weight:500; color:var(--ink-2); letter-spacing:0}
+.pack:hover .pack-price small{color:inherit; opacity:.8}
+.svc-note{margin-top:1.4rem; font-size:.9rem; color:var(--ink-2); max-width:62ch}
+.combo{margin-top:clamp(26px,4vw,44px); background:var(--ink); color:var(--paper); border-radius:16px; padding:clamp(22px,3vw,34px); display:grid; gap:.6rem}
+.combo h3{font-size:1.4rem}
+.combo p{color:color-mix(in srgb, var(--paper) 74%, transparent); max-width:58ch}
+.combo .amount{font-family:var(--f-display); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:600; color:var(--pico); letter-spacing:-.03em; line-height:1.1}
+
+.process{padding-block:clamp(66px,10vw,120px); background:var(--ink); color:var(--paper); margin-inline:calc(-1*var(--gutter)); padding-inline:var(--gutter)}
+.process-inner{max-width:var(--maxw); margin-inline:auto; display:grid; gap:clamp(30px,4vw,52px)}
+.process .kicker{color:color-mix(in srgb, var(--paper) 70%, transparent)}
+.process h2{font-size:clamp(2rem,5vw,4.2rem); line-height:.98; max-width:18ch}
+.process h2 em{color:var(--pico)}
+.steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,3vw,36px)}
+@media (max-width: 880px){ .steps{grid-template-columns:1fr} }
+.step{display:grid; gap:.6rem; padding-top:1.1rem; border-top:1px solid color-mix(in srgb, var(--paper) 26%, transparent); min-width:0}
+.step-n{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.1em; color:var(--pico)}
+.step h3{font-size:1.4rem}
+.step p{color:color-mix(in srgb, var(--paper) 74%, transparent); font-size:.98rem}
+
+.manifesto{padding-block:clamp(74px,11vw,150px); display:grid; gap:1.8rem}
+.manifesto-text{font-family:var(--f-display); font-size:clamp(1.7rem,4.2vw,3.6rem); line-height:1.1; letter-spacing:-.035em; font-weight:600; max-width:24ch}
+.manifesto-text em{color:var(--pico-text)}
+.fill-ready .w{--p:0; color:color-mix(in srgb, var(--ink) calc(var(--p) * 100%), var(--ink-3))}
+.fill-ready em .w{color:color-mix(in srgb, var(--pico-text) calc(var(--p) * 100%), var(--ink-3))}
+.manifesto-sign{display:flex; align-items:center; gap:.9rem; color:var(--ink-2); font-size:.95rem}
+.manifesto-sign .avatar{width:42px; height:42px; border-radius:50%; background:var(--ink); display:grid; place-items:center; flex:none}
+
+.contact{background:var(--pico); color:var(--on-pico); border-radius:clamp(18px,3vw,32px); padding:clamp(32px,6.5vw,86px) clamp(22px,5vw,66px); margin-block:clamp(18px,3vw,36px); display:grid; gap:clamp(24px,4vw,42px); position:relative; overflow:hidden; isolation:isolate}
+.contact .kicker{color:inherit; opacity:.75}
+.contact h2{font-size:clamp(2.3rem,7vw,6rem); line-height:.94; max-width:14ch}
+.contact-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.1rem; border-top:1px solid color-mix(in srgb, var(--on-pico) 30%, transparent); padding-top:clamp(18px,3vw,30px)}
+.email{font-family:var(--f-display); font-size:clamp(1.2rem,3.2vw,2.3rem); font-weight:600; letter-spacing:-.03em; overflow-wrap:anywhere; min-width:0; text-decoration:none}
+.contact .btn{--bg:var(--on-pico); --fg:var(--pico)}
+.contact .btn::before{background:var(--paper)}
+.contact .btn:hover{color:var(--ink); border-color:var(--paper)}
+.contact .btn.ghost{--bg:transparent; --fg:var(--on-pico); border-color:color-mix(in srgb, var(--on-pico) 40%, transparent)}
+.contact-actions{display:flex; flex-wrap:wrap; gap:.7rem}
+.contact-orb{position:absolute; z-index:-1; width:min(58vw,600px); aspect-ratio:1; border-radius:50%; right:-13%; top:-28%; border:1px solid color-mix(in srgb, var(--on-pico) 22%, transparent)}
+.contact-orb::after{content:""; position:absolute; inset:18%; border-radius:50%; border:1px solid color-mix(in srgb, var(--on-pico) 16%, transparent)}
+.copied{font-family:var(--f-mono); font-size:.78rem; opacity:.85}
+
+.founder{margin-block:clamp(40px,6vw,72px) 0; border:1px solid var(--line); border-radius:clamp(18px,3vw,28px); padding:clamp(24px,4vw,48px); display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:clamp(20px,4vw,48px); align-items:center; background:var(--card)}
+@media (max-width: 880px){ .founder{grid-template-columns:1fr} }
+.founder h2{font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1; letter-spacing:-.04em; margin-top:1rem}
+.founder p{color:var(--ink-2); margin-top:.9rem; max-width:52ch}
+.founder ul{list-style:none; margin:0; padding:0; display:grid; gap:.7rem}
+.founder li{display:grid; grid-template-columns:auto 1fr; gap:.7rem; align-items:baseline}
+.founder li::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--pico); transform:translateY(-1px)}
+.founder .deadline{font-family:var(--f-mono); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-top:1.1rem}
+.founder-price{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.06em; color:var(--ink-2); display:block; margin-top:.25rem; white-space:nowrap}
+.pack:hover .founder-price{color:inherit; opacity:.8}
+.pack-cta{text-decoration:none; font-size:clamp(1.05rem,1.8vw,1.45rem)}
+.pack-cta .arr{display:inline-block; transition:transform .45s var(--ease)}
+.pack:hover .pack-cta .arr{transform:translateX(4px)}
+.svc-note a{color:inherit; text-decoration-color:var(--pico)}
+.combo .amount{text-decoration:none}
+@media (max-width: 560px){ .pack-cta{font-size:.95rem} }
+.guide{border-top:1px solid var(--line); padding-block:clamp(56px,8vw,96px); display:grid; gap:1.2rem}
+.guide h2{font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1; letter-spacing:-.04em; max-width:18ch}
+.contact-phone{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; font-family:var(--f-mono); font-size:.85rem; opacity:.85}
+.contact-phone a{text-decoration:none}
+.footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem 2rem; padding-block:26px 38px; color:var(--ink-2); font-size:.85rem}
+.footer ul{display:flex; flex-wrap:wrap; gap:.4rem 1.1rem; list-style:none; margin:0; padding:0}
+.footer a{text-decoration:none}
+.footer a:hover{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important}
+  .band-track{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="page">
+  <header class="site-header">
+    <a class="logo" href="#inicio" aria-label="Mirla Studio, inicio">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="27" cy="32" r="20" fill="var(--ink)"></circle>
+        <path d="M45 26 L62 32 L45 38 Z" fill="var(--pico)"></path>
+        <circle cx="33" cy="26" r="3.6" fill="var(--paper)"></circle>
+      </svg>
+      mirla
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#paquetes">Webs</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a href="#fundadores">Oferta</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn small" href="#contacto" data-magnetic>Pedir presupuesto<span class="arr">→</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menú</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" hidden aria-label="Menú móvil">
+    <a href="#paquetes">Webs</a>
+    <a href="#mantenimiento">Mantenimiento</a>
+    <a href="#fundadores">Oferta de fundador</a>
+    <a href="#proceso">Cómo trabajo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <canvas id="bandada" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Desarrollo web y posicionamiento · Murcia</p>
+      <h1 class="hero-title">
+        <span class="line"><span>Webs que traen</span></span>
+        <span class="line"><span>clientes, no</span></span>
+        <span class="line"><span><em>solo visitas.</em></span></span>
+      </h1>
+      <div class="hero-foot">
+        <p class="lead">Webs de todo tipo: corporativas, tiendas online o con lo que tu negocio necesite. Las pongo donde la gente busca y me quedo a que sigan funcionando. <strong>Un solo interlocutor</strong> para tu web, tu ficha de Google y tus redes.</p>
+        <div class="cta-row">
+          <a class="btn" href="#paquetes" data-magnetic>Ver servicios <span class="arr">→</span></a>
+          <a class="btn ghost" href="#contacto" data-magnetic>Escríbeme</a>
+        </div>
+      </div>
+      <dl class="hero-facts">
+        <div><dt>Qué hago</dt><dd>Webs de todo tipo</dd></div>
+        <div><dt>Precio</dt><dd>Cerrado por escrito</dd></div>
+        <div><dt>Después de entregar</dt><dd>Informe cada mes</dd></div>
+      </dl>
+      </div>
+    </section>
+
+    <div class="band" aria-hidden="true">
+      <div class="band-skew"><div class="band-track">
+        <div class="band-group"><span>Webs corporativas</span><i></i><span>Tiendas online</span><i></i><span>ficha de Google</span><i></i><span>SEO local</span><i></i><span>Mantenimiento</span><i></i><span>Redes sociales</span><i></i><span>funciones a medida</span><i></i></div>
+        <div class="band-group"><span>Webs corporativas</span><i></i><span>Tiendas online</span><i></i><span>ficha de Google</span><i></i><span>SEO local</span><i></i><span>Mantenimiento</span><i></i><span>Redes sociales</span><i></i><span>funciones a medida</span><i></i></div>
+      </div></div>
+    </div>
+
+    <section class="founder" id="fundadores" aria-labelledby="founderTitle">
+      <div>
+        <p class="kicker">Lanzamiento</p>
+        <h2 id="founderTitle">Clientes fundadores: <em>25 % de descuento.</em></h2>
+        <p>Mirla Studio acaba de abrir y busco a mis primeros cinco clientes. A cambio del descuento te pido tres cosas sencillas cuando el trabajo esté terminado y te guste.</p>
+        <p class="deadline">5 plazas · hasta el 13 de diciembre de 2026</p>
+      </div>
+      <ul>
+        <li><span>25 % en cualquier proyecto. En las cuotas mensuales, los tres primeros meses.</span></li>
+        <li><span>Una reseña sincera en Google.</span></li>
+        <li><span>Permiso para enseñar tu web como trabajo realizado, con una frase tuya.</span></li>
+        <li><span>Se paga como siempre: 50 % al empezar y el resto a la entrega.</span></li>
+      </ul>
+    </section>
+
+    <section class="packs" id="paquetes">
+      <div class="sec-head">
+        <p class="kicker">Proyectos</p>
+        <h2>Se paga una vez, <em>con el precio por escrito.</em></h2>
+      </div>
+      <ul class="pack-list">
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/web-corporativa</span><span class="pack-name">Web corporativa</span></div>
+          <p class="pack-desc">De cinco a ocho páginas, adaptada al móvil, con formulario de contacto y analítica puesta en marcha. Para cualquier tipo de negocio.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/tienda-online</span><span class="pack-name">Tienda online</span></div>
+          <p class="pack-desc">Catálogo, carrito, pasarela de pago y envíos configurados, más formación para que gestiones tus productos.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/ficha-de-google</span><span class="pack-name">Alta en Google</span></div>
+          <p class="pack-desc">Creación y optimización de tu ficha: categorías, servicios, horarios, fotos y mapa. Lo que hace que aparezcas al buscar cerca.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/a-medida</span><span class="pack-name">Funciones a medida</span></div>
+          <p class="pack-desc">Lo que tu web o tu negocio necesite además: reservas o citas online, presupuestos, área de clientes, inventario o pequeñas aplicaciones de gestión.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+      </ul>
+      <p class="svc-note">Cada negocio necesita algo distinto, así que no trabajo con tarifas de catálogo. Cuéntame qué buscas y te preparo un presupuesto cerrado por escrito, sin compromiso. Escríbeme a <a href="mailto:hola@mirlastudio.es?subject=Presupuesto">hola@mirlastudio.es</a>.</p>
+    </section>
+
+    <section class="keep" id="mantenimiento">
+      <div class="sec-head">
+        <p class="kicker">Cuotas mensuales</p>
+        <h2>Una web sin mantener <em>envejece en seis meses.</em></h2>
+      </div>
+      <ul class="pack-list">
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/mantenimiento</span><span class="pack-name">Mantenimiento web</span></div>
+          <p class="pack-desc">Alojamiento, copias de seguridad, actualizaciones, seguridad y los cambios pequeños del día a día.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/gestion-google</span><span class="pack-name">Gestión de Google</span></div>
+          <p class="pack-desc">Publicaciones, fotos nuevas y respuesta a todas las reseñas para que la ficha siga viva y suba en el mapa.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/seo-local</span><span class="pack-name">SEO local</span></div>
+          <p class="pack-desc">Trabajo continuo para que te encuentren en tu zona: contenidos, enlaces, velocidad e informe mensual.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+        <li class="pack">
+          <div class="pack-head"><span class="pack-tag">/redes-sociales</span><span class="pack-name">Redes sociales</span></div>
+          <p class="pack-desc">Dos redes gestionadas con entre ocho y doce publicaciones al mes, con calendario acordado contigo.</p>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+        </li>
+      </ul>
+      <div class="combo">
+        <h3>Todo junto sale mejor</h3>
+        <p>Mantenimiento, gestión de la ficha de Google y SEO local contratados a la vez: un solo interlocutor, un solo informe y un solo recibo.</p>
+        <a class="amount" href="#contacto">Pide tu cuota conjunta →</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="process" id="proceso">
+    <div class="process-inner">
+      <p class="kicker">Cómo trabajo</p>
+      <h2>Sin sorpresas <em>ni presupuestos infinitos.</em></h2>
+      <div class="steps">
+        <div class="step"><span class="step-n">01</span><h3>Hablamos</h3><p>Media hora para entender a qué te dedicas, a quién quieres atraer y qué te está fallando ahora mismo.</p></div>
+        <div class="step"><span class="step-n">02</span><h3>Propuesta cerrada</h3><p>Precio y plazo por escrito, con lo que entra y lo que no. Se empieza con el 50%.</p></div>
+        <div class="step"><span class="step-n">03</span><h3>Entrega y seguimiento</h3><p>La web en marcha, tú formado para usarla y un informe cada mes si contratas mantenimiento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div>
+    <section class="manifesto">
+      <p class="kicker">Por qué</p>
+      <p class="manifesto-text" id="manifesto">Una web preciosa que no encuentra nadie no sirve de nada. Por eso no entrego el diseño y desaparezco: <em>me quedo hasta que suena el teléfono.</em></p>
+      <div class="manifesto-sign">
+        <span class="avatar" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64">
+            <circle cx="27" cy="32" r="20" fill="var(--paper)"></circle>
+            <path d="M45 26 L62 32 L45 38 Z" fill="var(--pico)"></path>
+            <circle cx="33" cy="26" r="3.6" fill="var(--ink)"></circle>
+          </svg>
+        </span>
+        <span>Sergio · Mirla Studio</span>
+      </div>
+    </section>
+
+    <!-- HUECO PARA EL FORMULARIO DE BREVO (guía "7 cosas que tu web debe tener para que te llamen").
+         Cuando exista: pegar el código de Brevo dentro de #brevo-form y quitar el atributo hidden de la sección.
+         Brevo con doble confirmación (double opt-in) y casilla de privacidad que enlace a aviso-legal.html. -->
+    <section class="guide" id="guia" hidden>
+      <p class="kicker">Guía gratis</p>
+      <h2>7 cosas que tu web debe tener <em>para que te llamen.</em></h2>
+      <p class="svc-note" style="margin-top:0">Te la mando al correo. Sin spam: si no te sirve, te das de baja con un clic.</p>
+      <div id="brevo-form"></div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <span class="contact-orb" aria-hidden="true"></span>
+      <p class="kicker">Contacto</p>
+      <h2>Cuéntame qué necesitas.</h2>
+      <div class="contact-row">
+        <a class="email" id="email" href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>
+        <div class="contact-actions">
+          <button class="btn" id="copyBtn" type="button" data-magnetic>Copiar email</button>
+          <a class="btn ghost" href="https://www.instagram.com/mirlastudio.es/" target="_blank" rel="noopener" data-magnetic>Instagram <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="contact-phone">
+        <a href="mailto:hola@mirlastudio.es?subject=Presupuesto">Escribir un email</a>
+        <a href="https://www.instagram.com/mirlastudio.es/" target="_blank" rel="noopener">@mirlastudio.es</a>
+        <!-- TELÉFONO/WHATSAPP: añadir cuando haya línea propia del estudio (no publicar el móvil personal) -->
+      </div>
+      <span class="copied" id="copied" role="status" aria-live="polite"></span>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <span>© Mirla Studio <span id="year">2026</span> · Murcia · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
+    <ul>
+      <li><a href="aviso-legal.html">Aviso legal y privacidad</a></li>
+    </ul>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(pointer: fine)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var menuBtn = document.getElementById('menuBtn'), mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileNav.hidden;
+    mobileNav.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? 'Cerrar' : 'Menú';
+  });
+  mobileNav.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ mobileNav.hidden = true; menuBtn.textContent = 'Menú'; menuBtn.setAttribute('aria-expanded','false'); }
+  });
+
+  var copyBtn = document.getElementById('copyBtn'), copied = document.getElementById('copied'), emailEl = document.getElementById('email');
+  copyBtn.addEventListener('click', function(){
+    var txt = emailEl.textContent.trim();
+    var selectFallback = function(){
+      var r = document.createRange(); r.selectNodeContents(emailEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copied.textContent = 'Email seleccionado: pulsa Ctrl+C o Cmd+C para copiarlo.';
+    };
+    try {
+      navigator.clipboard.writeText(txt).then(function(){
+        copyBtn.textContent = 'Copiado'; copied.textContent = 'Email copiado al portapapeles.';
+        setTimeout(function(){ copyBtn.textContent = 'Copiar email'; }, 2200);
+      }, selectFallback);
+    } catch (e) { selectFallback(); }
+  });
+
+
+
+  /* La bandada del hero: mirlos que vuelan en grupo y siguen al ratón */
+  var hero = document.querySelector('.hero'), canvas = document.getElementById('bandada');
+  if (canvas && canvas.getContext){
+    var ctx = canvas.getContext('2d'), W = 0, H = 0, boids = [], visible = true, colors = {};
+    var mouse = { x: 0, y: 0, on: false };
+    var readColors = function(){ var cs = getComputedStyle(document.documentElement); colors = { ink: cs.getPropertyValue('--ink').trim(), pico: cs.getPropertyValue('--pico').trim() }; };
+    var seed = function(){
+      var r = canvas.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width; H = r.height; canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.max(30, Math.min(100, W * H / 10000)));
+      boids = [];
+      for (var i = 0; i < n; i++) boids.push({ x: W * (.55 + Math.random() * .4), y: H * (.15 + Math.random() * .55), vx: Math.random() * 2 - 1, vy: Math.random() * 2 - 1, f: Math.random() * 6, amber: Math.random() < .08, sz: 6 + Math.random() * 5 });
+      readColors();
+    };
+    /* Silueta de mirlo: cuerpo y dos alas que aletean */
+    var bird = function(x, y, ang, w, flap, color){
+      var f = Math.sin(flap) * .55;
+      ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.fillStyle = color; ctx.strokeStyle = color;
+      ctx.beginPath(); ctx.ellipse(0, 0, w * .55, w * .2, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.lineWidth = Math.max(1.2, w * .14); ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(-w * .1, 0); ctx.quadraticCurveTo(-w * .35, -w * (.5 + f), -w * .8, -w * (.35 + f * 1.4)); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-w * .1, 0); ctx.quadraticCurveTo(-w * .35, w * (.5 + f), -w * .8, w * (.35 + f * 1.4)); ctx.stroke();
+      ctx.restore();
+    };
+    var step = function(t){
+      ctx.clearRect(0, 0, W, H);
+      var s = (t || 0) / 1000;
+      /* Sin ratón, la bandada persigue un punto que dibuja un ocho a la derecha */
+      var gx = mouse.on ? mouse.x : W * (.72 + .17 * Math.sin(s * .35)),
+          gy = mouse.on ? mouse.y : H * (.4 + .22 * Math.sin(s * .7));
+      for (var i = 0; i < boids.length; i++){
+        var b = boids[i], ax = 0, ay = 0, cx = 0, cy = 0, sx = 0, sy = 0, k = 0;
+        for (var j = 0; j < boids.length; j++){
+          if (i === j) continue;
+          var o = boids[j], dx = o.x - b.x, dy = o.y - b.y, d2 = dx * dx + dy * dy;
+          if (d2 < 3600){ k++; ax += o.vx; ay += o.vy; cx += o.x; cy += o.y; if (d2 < 400){ sx -= dx / (d2 + 1) * 18; sy -= dy / (d2 + 1) * 18; } }
+        }
+        if (k){ b.vx += (ax / k - b.vx) * .05 + (cx / k - b.x) * .0012; b.vy += (ay / k - b.vy) * .05 + (cy / k - b.y) * .0012; }
+        b.vx += sx * .06 + (gx - b.x) * .00045; b.vy += sy * .06 + (gy - b.y) * .00045;
+        var sp = Math.hypot(b.vx, b.vy);
+        if (sp > 3.1){ b.vx *= 3.1 / sp; b.vy *= 3.1 / sp; } else if (sp < 1.3){ b.vx *= 1.3 / sp; b.vy *= 1.3 / sp; }
+        b.x += b.vx; b.y += b.vy; b.f += .28 + sp * .05;
+        bird(b.x, b.y, Math.atan2(b.vy, b.vx), b.sz, b.f, b.amber ? colors.pico : colors.ink);
+      }
+    };
+    var frame = 0;
+    var loop = function(t){ if (visible){ step(t); if (++frame % 120 === 0) readColors(); } requestAnimationFrame(loop); };
+    hero.addEventListener('pointermove', function(e){ var r = canvas.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true; });
+    hero.addEventListener('pointerleave', function(){ mouse.on = false; });
+    try { new IntersectionObserver(function(en){ visible = en[0].isIntersecting; }).observe(hero); } catch (e) {}
+    window.addEventListener('resize', function(){ clearTimeout(window.__rz); window.__rz = setTimeout(seed, 150); });
+    seed();
+    if (reduced) step(0); else requestAnimationFrame(loop);
+  }
+
+  if (!window.gsap || !window.ScrollTrigger || reduced) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* Scroll suave con Lenis */
+  var lenis = null;
+  try {
+    if (window.Lenis){
+      lenis = new Lenis({ lerp: .1, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    }
+  } catch (e) { lenis = null; }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      var el = id.length > 1 && document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(el, { offset: -70, duration: 1.4 });
+      else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+  tl.from('.site-header', { y: -22, opacity: 0, duration: .8 })
+    .from('.hero-title .line > span', { yPercent: 115, rotate: 3, duration: 1.3, stagger: .1 }, '-=.5')
+    .from('.eyebrow, .lead, .cta-row > *', { y: 22, opacity: 0, duration: .9, stagger: .06 }, '-=.95')
+    .from('.hero-facts > div', { y: 26, opacity: 0, duration: .9, stagger: .07 }, '-=.8')
+    .from('#bandada', { opacity: 0, duration: 1.6, ease: 'power2.out' }, 0);
+
+  /* Banda: se inclina según la velocidad del scroll */
+  var skewTo = gsap.quickTo('.band-skew', 'skewX', { duration: .5, ease: 'power3' });
+  ScrollTrigger.create({ onUpdate: function(self){ skewTo(gsap.utils.clamp(-10, 10, self.getVelocity() / -260)); } });
+  ScrollTrigger.addEventListener('scrollEnd', function(){ skewTo(0); });
+
+  gsap.utils.toArray('.pack-name').forEach(function(el, i){
+    gsap.fromTo(el, { xPercent: i % 2 ? 4 : -4 }, { xPercent: 0, ease: 'none',
+      scrollTrigger: { trigger: el, start: 'top bottom', end: 'center 58%', scrub: 1 } });
+  });
+  gsap.from('.founder', { y: 30, opacity: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.founder', start: 'top 88%' } });
+  gsap.from('.combo', { y: 30, opacity: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.combo', start: 'top 88%' } });
+  gsap.from('.step', { y: 28, opacity: 0, duration: .9, stagger: .09, ease: 'expo.out', scrollTrigger: { trigger: '.steps', start: 'top 85%' } });
+
+  var man = document.getElementById('manifesto');
+  (function split(node){
+    Array.prototype.slice.call(node.childNodes).forEach(function(ch){
+      if (ch.nodeType === 3){
+        var frag = document.createDocumentFragment();
+        ch.textContent.split(/(\s+)/).forEach(function(part){
+          if (!part) return;
+          if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part));
+          else { var s = document.createElement('span'); s.className = 'w'; s.textContent = part; frag.appendChild(s); }
+        });
+        node.replaceChild(frag, ch);
+      } else if (ch.nodeType === 1) split(ch);
+    });
+  })(man);
+  man.classList.add('fill-ready');
+  gsap.to(man.querySelectorAll('.w'), { '--p': 1, stagger: .1, ease: 'none',
+    scrollTrigger: { trigger: man, start: 'top 82%', end: 'bottom 55%', scrub: true } });
+
+  gsap.fromTo('.contact', { scale: .94, borderRadius: '60px' }, { scale: 1, borderRadius: '32px', ease: 'none',
+    scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'top 48%', scrub: true } });
+  gsap.to('.contact-orb', { rotate: 36, yPercent: 18, ease: 'none',
+    scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+  if (finePointer){
+    document.querySelectorAll('[data-magnetic]').forEach(function(el){
+      var xTo = gsap.quickTo(el, 'x', { duration: .5, ease: 'power3' });
+      var yTo = gsap.quickTo(el, 'y', { duration: .5, ease: 'power3' });
+      el.addEventListener('pointermove', function(e){
+        var r = el.getBoundingClientRect();
+        xTo((e.clientX - r.left - r.width / 2) * .28);
+        yTo((e.clientY - r.top - r.height / 2) * .38);
+      });
+      el.addEventListener('pointerleave', function(){ gsap.to(el, { x: 0, y: 0, duration: .9, ease: 'elastic.out(1,.4)' }); });
+    });
+    /* Cursor que crece sobre enlaces y botones */
+    var cur = document.getElementById('cursor');
+    var cx = gsap.quickTo(cur, 'x', { duration: .35, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: .35, ease: 'power3' });
+    window.addEventListener('pointermove', function(e){ cur.classList.add('on'); cx(e.clientX); cy(e.clientY); });
+    document.addEventListener('pointerleave', function(){ cur.classList.remove('on'); });
+    document.addEventListener('pointerover', function(e){ cur.classList.toggle('grow', !!e.target.closest('a, button, .pack')); });
+  }
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
