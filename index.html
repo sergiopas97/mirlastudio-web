@@ -206,6 +206,23 @@ section{scroll-margin-top:84px}
 .consent a{color:inherit}
 .form-foot{display:flex; flex-wrap:wrap; align-items:center; gap:1rem}
 .form-status{font-family:var(--f-mono); font-size:.85rem}
+.form-status a{color:inherit}
+.sending .arr{display:inline-block; animation:nudge .8s var(--ease) infinite}
+@keyframes nudge{50%{transform:translateX(5px)}}
+.form-ok{border-top:1px solid color-mix(in srgb, var(--on-pico) 30%, transparent); padding-top:clamp(18px,3vw,30px); display:grid; gap:.8rem; position:relative; min-height:220px; overflow:hidden}
+.form-ok h3{font-size:clamp(1.8rem,4.5vw,3rem); line-height:1; margin:0}
+.form-ok p{margin:0; max-width:46ch}
+.form-ok .btn{justify-self:start; margin-top:.6rem}
+.ok-bird{position:absolute; left:-80px; top:70%; width:64px; color:var(--on-pico); animation:fly 2.6s cubic-bezier(.45,0,.25,1) .15s forwards}
+.ok-bird .wing{transform-origin:28px 22px; animation:flap .32s ease-in-out infinite alternate}
+.ok-bird .wing.b{animation-delay:-.16s; opacity:.55}
+@keyframes fly{0%{transform:translate(0,0) rotate(-8deg)} 60%{transform:translate(min(70vw,900px),-120px) rotate(-14deg)} 100%{transform:translate(min(110vw,1500px),-240px) rotate(-18deg)}}
+@keyframes flap{from{transform:scaleY(1)} to{transform:scaleY(-.55)}}
+.form-ok.in > *:not(.ok-bird){animation:okIn .7s var(--ease) both}
+.form-ok.in > p{animation-delay:.08s}
+.form-ok.in > .btn{animation-delay:.16s}
+@keyframes okIn{from{opacity:0; transform:translateY(16px)}}
+@media (prefers-reduced-motion: reduce){ .ok-bird{display:none} .form-ok.in > *{animation:none} .sending .arr{animation:none} }
 .hp{position:absolute; left:-9999px; width:1px; height:1px; opacity:0}
 @media (max-width: 640px){ .contact-form{grid-template-columns:1fr} }
 .contact-actions{display:flex; flex-wrap:wrap; gap:.7rem}
@@ -442,6 +459,12 @@ section{scroll-margin-top:84px}
           <span class="form-status" id="formStatus" role="status" aria-live="polite"></span>
         </div>
       </form>
+      <div class="form-ok" id="formOk" role="status" aria-live="polite" tabindex="-1" hidden>
+        <svg class="ok-bird" viewBox="0 0 64 40" aria-hidden="true"><g fill="currentColor"><path class="wing b" d="M28 22 C22 10 12 6 2 6 C10 12 16 18 20 24 Z"/><ellipse cx="34" cy="24" rx="16" ry="6"/><circle cx="48" cy="21" r="5"/><path d="M52 20 L60 21.5 L52 23 Z" fill="#E07B12"/><path d="M18 24 L8 30 L20 27 Z"/><path class="wing" d="M28 22 C24 8 16 0 6 -2 C14 6 18 14 22 24 Z"/></g></svg>
+        <h3>¡Mensaje enviado!</h3>
+        <p>Gracias por escribir. Lo leo yo mismo y te respondo lo antes posible a tu email.</p>
+        <button class="btn ghost" type="button" id="againBtn">Enviar otro mensaje</button>
+      </div>
       <div class="contact-row">
         <a class="email" id="email" href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>
         <div class="contact-actions">
@@ -479,18 +502,25 @@ section{scroll-margin-top:84px}
     if (e.target.tagName === 'A'){ mobileNav.hidden = true; menuBtn.textContent = 'Menú'; menuBtn.setAttribute('aria-expanded','false'); }
   });
 
-  var form = document.getElementById('contactForm'), status = document.getElementById('formStatus'), sendBtn = document.getElementById('sendBtn');
+  var form = document.getElementById('contactForm'), status = document.getElementById('formStatus'), sendBtn = document.getElementById('sendBtn'), ok = document.getElementById('formOk');
   if (form && window.fetch){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if (form.botcheck && form.botcheck.checked) return;
-      sendBtn.disabled = true; status.textContent = 'Enviando…';
+      sendBtn.disabled = true; sendBtn.classList.add('sending'); status.textContent = 'Enviando…';
       fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-        .then(function(r){ return r.json().then(function(d){ if (!r.ok || !d.success) throw new Error(d.message || 'error'); }); })
-        .then(function(){ form.reset(); status.textContent = '¡Gracias! Te respondo lo antes posible.'; })
-        .catch(function(){ status.innerHTML = 'No se ha podido enviar. Escríbeme a <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>.'; })
-        .then(function(){ sendBtn.disabled = false; });
+        .then(function(r){ return r.json().then(function(d){ if (!r.ok || !d.success) throw new Error(d.message || ('HTTP ' + r.status)); }); })
+        .then(function(){
+          form.reset(); status.textContent = '';
+          form.hidden = true; ok.hidden = false; ok.classList.remove('in'); void ok.offsetWidth; ok.classList.add('in');
+          ok.focus({ preventScroll: true });
+        })
+        .catch(function(err){
+          status.innerHTML = 'No se ha podido enviar (' + String(err && err.message || 'error').replace(/[<>&]/g, '') + '). Escríbeme a <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>.';
+        })
+        .then(function(){ sendBtn.disabled = false; sendBtn.classList.remove('sending'); });
     });
+    document.getElementById('againBtn').addEventListener('click', function(){ ok.hidden = true; form.hidden = false; document.getElementById('f-nombre').focus(); });
   }
 
 
