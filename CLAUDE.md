@@ -13,7 +13,8 @@ Web de una página en HTML estático, sin compilación. Se publica en Netlify de
 - Colores: crema `#F7F3EC`, tinta `#17150F`, ámbar `#E07B12` (texto ámbar sobre crema solo en `#A85608`; nunca `#E07B12` como texto sobre claro).
 - Tipografías: Fraunces (titulares), Archivo (texto), JetBrains Mono (etiquetas).
 - Símbolo: cabeza de mirlo con pico ámbar. Hero: bandada de mirlos en canvas que sigue al ratón.
-- Animaciones: GSAP + ScrollTrigger (cdnjs) y Lenis (jsdelivr). Respetar `prefers-reduced-motion`.
+- Animaciones: GSAP + ScrollTrigger (cdnjs). Sin scroll suave ni cursor propio (hacían la web pesada). Bandada: máx. 60 pájaros. Respetar `prefers-reduced-motion`.
+- Cabecera, bandada y banda de servicios ocupan todo el ancho de la pantalla.
 - Tono: tuteo, frases cortas, sin jerga, cercano.
 
 ## Reglas que no se rompen
