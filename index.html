@@ -38,9 +38,93 @@
     { "@type": "City", "name": "Lorca" },
     { "@type": "City", "name": "Molina de Segura" },
     { "@type": "City", "name": "Alcantarilla" },
+    { "@type": "City", "name": "Las Torres de Cotillas" },
+    { "@type": "City", "name": "Santomera" },
     { "@type": "AdministrativeArea", "name": "Región de Murcia" }
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Mirla Studio",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño de webs corporativas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tiendas online" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo a medida y reservas online" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alta y optimización de ficha de Google" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento web" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales" } }
+    ]
+  },
   "sameAs": ["https://www.instagram.com/mirlastudio.es/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://mirlastudio.es/#web",
+  "url": "https://mirlastudio.es/",
+  "name": "Mirla Studio",
+  "inLanguage": "es-ES",
+  "publisher": {
+    "@id": "https://mirlastudio.es/#negocio"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Trabajáis solo con negocios de Murcia capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Trabajamos con negocios de toda la Región de Murcia: Murcia y sus pedanías, Cartagena, Lorca, Molina de Segura, Alcantarilla, Las Torres de Cotillas, Santomera y alrededores. Las reuniones pueden ser por videollamada, así que la distancia no es un problema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una página web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de lo que necesite tu negocio: no es lo mismo una landing page que una tienda online o una web con reservas. Por eso no trabajamos con tarifas de catálogo. Tras una primera conversación te enviamos un presupuesto cerrado y por escrito, sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto se tarda en tener la web publicada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plazo se fija por escrito en la propuesta, según el alcance del proyecto, y forma parte de lo que acordamos antes de empezar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podéis añadir reservas o citas online a mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Desarrollamos funcionalidades a medida como reservas y citas online, generación de presupuestos, áreas de clientes o herramientas de gestión interna, integradas en tu web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la ficha de Google y por qué la necesita mi negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el perfil de empresa que aparece en Google Maps y en las búsquedas locales, con tus horarios, servicios, fotos y reseñas. Es lo primero que ve mucha gente al buscar un negocio cerca. Nos encargamos de crearla, optimizarla y mantenerla activa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa después de publicar la web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si contratas mantenimiento, nos ocupamos del alojamiento, las copias de seguridad, las actualizaciones y los pequeños cambios, y te enviamos un informe mensual. También podemos trabajar el SEO local para que te encuentren en tu zona."
+      }
+    }
+  ]
 }
 </script>
 <!-- sameAs: añadir LinkedIn, Facebook y la ficha de Google cuando existan. Teléfono: no publicar el móvil personal. -->
@@ -245,6 +329,14 @@ section{scroll-margin-top:84px}
 .svc-note a{color:inherit; text-decoration-color:var(--pico)}
 .combo .amount{text-decoration:none}
 @media (max-width: 560px){ .pack-cta{font-size:.95rem} }
+.faq{border-top:1px solid var(--line); padding-block:clamp(56px,8vw,100px)}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-block:clamp(16px,2.2vw,24px); font-family:var(--f-display); font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:600; letter-spacing:-.03em; line-height:1.2}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+"; font-family:var(--f-mono); font-weight:400; font-size:1.2rem; color:var(--pico-text); flex:none; transition:transform .3s var(--ease)}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{color:var(--ink-2); max-width:68ch; padding-bottom:clamp(16px,2.2vw,24px)}
 .guide{border-top:1px solid var(--line); padding-block:clamp(56px,8vw,96px); display:grid; gap:1.2rem}
 .guide h2{font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1; letter-spacing:-.04em; max-width:18ch}
 .contact-phone{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; font-family:var(--f-mono); font-size:.85rem; opacity:.85}
@@ -430,6 +522,39 @@ section{scroll-margin-top:84px}
       </div>
     </section>
 
+    <section class="faq" id="preguntas" aria-labelledby="faqTitle">
+      <div class="sec-head">
+        <p class="kicker">Preguntas frecuentes</p>
+        <h2 id="faqTitle">Diseño web en Murcia: <em>lo que nos preguntan.</em></h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Trabajáis solo con negocios de Murcia capital?</summary>
+          <p>No. Trabajamos con negocios de toda la Región de Murcia: Murcia y sus pedanías, Cartagena, Lorca, Molina de Segura, Alcantarilla, Las Torres de Cotillas, Santomera y alrededores. Las reuniones pueden ser por videollamada, así que la distancia no es un problema.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto cuesta una página web?</summary>
+          <p>Depende de lo que necesite tu negocio: no es lo mismo una landing page que una tienda online o una web con reservas. Por eso no trabajamos con tarifas de catálogo. Tras una primera conversación te enviamos un presupuesto cerrado y por escrito, sin compromiso.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto se tarda en tener la web publicada?</summary>
+          <p>El plazo se fija por escrito en la propuesta, según el alcance del proyecto, y forma parte de lo que acordamos antes de empezar.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Podéis añadir reservas o citas online a mi web?</summary>
+          <p>Sí. Desarrollamos funcionalidades a medida como reservas y citas online, generación de presupuestos, áreas de clientes o herramientas de gestión interna, integradas en tu web.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué es la ficha de Google y por qué la necesita mi negocio?</summary>
+          <p>Es el perfil de empresa que aparece en Google Maps y en las búsquedas locales, con tus horarios, servicios, fotos y reseñas. Es lo primero que ve mucha gente al buscar un negocio cerca. Nos encargamos de crearla, optimizarla y mantenerla activa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa después de publicar la web?</summary>
+          <p>Si contratas mantenimiento, nos ocupamos del alojamiento, las copias de seguridad, las actualizaciones y los pequeños cambios, y te enviamos un informe mensual. También podemos trabajar el SEO local para que te encuentren en tu zona.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- HUECO PARA EL FORMULARIO DE BREVO (guía "7 cosas que tu web debe tener para que te llamen").
          Cuando exista: pegar el código de Brevo dentro de #brevo-form y quitar el atributo hidden de la sección.
          Brevo con doble confirmación (double opt-in) y casilla de privacidad que enlace a aviso-legal.html. -->
@@ -475,7 +600,7 @@ section{scroll-margin-top:84px}
   </div>
 
   <footer class="footer">
-    <span>© Mirla Studio <span id="year">2026</span> · Murcia · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
+    <span>© Mirla Studio <span id="year">2026</span> · Diseño web en Murcia y toda la Región · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
     <ul>
       <li><a href="aviso-legal.html">Aviso legal y privacidad</a></li>
     </ul>
