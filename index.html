@@ -159,14 +159,15 @@ html{scroll-padding-top:84px}
 .skip:focus{top:12px}
 body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6; overflow-x:clip; -webkit-font-smoothing:antialiased}
 [hidden]{display:none!important}
-a{color:inherit}
+a{color:inherit; text-underline-offset:.2em; text-decoration-thickness:1px}
+::selection{background:color-mix(in srgb, var(--pico) 38%, transparent); color:var(--ink)}
+input, textarea{caret-color:currentColor}
+html{scrollbar-color:color-mix(in srgb, var(--ink) 35%, transparent) var(--paper)}
 :focus-visible{outline:2px solid var(--pico); outline-offset:3px; border-radius:4px}
 h1,h2,h3{margin:0; text-wrap:balance; font-family:var(--f-display); font-weight:600; letter-spacing:-.03em}
 p{margin:0}
 em{font-style:italic; color:var(--pico-text)}
 .page{padding-inline:var(--gutter); max-width:calc(var(--maxw) + 2*var(--gutter)); margin-inline:auto}
-.kicker{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); display:flex; align-items:center; gap:.6rem}
-.kicker::before{content:""; width:26px; height:1px; background:currentColor; flex:none}
 
 .site-header{position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:14px; margin-inline:calc(50% - 50vw); padding-inline:max(var(--gutter), calc(50vw - 50%)); background:color-mix(in srgb, var(--paper) 82%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent)}
 .logo{display:flex; align-items:center; gap:.55rem; text-decoration:none; font-family:var(--f-display); font-weight:600; font-size:1.5rem; letter-spacing:-.035em}
@@ -182,6 +183,7 @@ em{font-style:italic; color:var(--pico-text)}
 .btn{--bg:var(--ink); --fg:var(--paper); display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; cursor:pointer; font:600 .95rem/1 var(--f-body); letter-spacing:-.01em; background:var(--bg); color:var(--fg); border:1px solid var(--bg); padding:.9rem 1.3rem; border-radius:999px; position:relative; overflow:hidden; isolation:isolate; -webkit-tap-highlight-color:transparent; transition:color var(--t-fill) var(--ease-out), border-color var(--t-fill) var(--ease-out), transform var(--t-press) var(--ease-out)}
 .btn::before{content:""; position:absolute; inset:0; z-index:-1; background:var(--pico); border-radius:inherit; transform:translateY(101%); transition:transform var(--t-fill) var(--ease-out)}
 .btn:active{transform:scale(.97)}
+.arr{width:1em; height:1em; flex:none; vertical-align:-.12em; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
 .btn .arr{display:inline-block; transition:transform var(--t-fill) var(--ease-out)}
 @media (hover: hover) and (pointer: fine){
   .btn:hover{color:var(--on-pico); border-color:var(--pico)}
@@ -201,17 +203,14 @@ em{font-style:italic; color:var(--pico-text)}
 .hero{position:relative; padding-block:clamp(48px,9vw,104px) clamp(36px,6vw,64px)}
 #bandada{position:absolute; top:0; bottom:0; left:calc(50% - 50vw); width:100vw; height:100%; pointer-events:none; z-index:0; -webkit-mask-image:linear-gradient(100deg, rgba(0,0,0,.12) 20%, #000 60%); mask-image:linear-gradient(100deg, rgba(0,0,0,.12) 20%, #000 60%)}
 .hero-inner{position:relative; z-index:1; display:grid; gap:clamp(26px,4vw,44px)}
-.eyebrow{font-family:var(--f-mono); font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); display:flex; align-items:center; gap:.7rem}
-.pulse{width:9px; height:9px; border-radius:50%; background:var(--pico); position:relative; flex:none}
-.pulse::after{content:""; position:absolute; inset:-5px; border-radius:50%; border:1px solid var(--pico); animation:ping 2.6s var(--ease) infinite}
-@keyframes ping{0%{transform:scale(.4); opacity:1} 100%{transform:scale(1.8); opacity:0}}
-.hero-title{font-size:clamp(2.9rem,10vw,8.6rem); line-height:.92; letter-spacing:-.045em; font-weight:600}
+.hero-title{font-size:clamp(2.9rem,9vw,6rem); line-height:.94; letter-spacing:-.04em; font-weight:600}
 .hero-title .line{display:block; overflow:hidden; padding-bottom:.06em; margin-bottom:-.06em}
 .hero-title .line > span{display:inline-block; will-change:transform}
 .hero-foot{display:grid; grid-template-columns:minmax(0,1.05fr) auto; gap:2rem; align-items:end}
 .lead{font-size:clamp(1.05rem,1.6vw,1.3rem); line-height:1.5; max-width:38ch; color:var(--ink-2)}
 .lead strong{color:var(--ink); font-weight:600}
 .cta-row{display:flex; flex-wrap:wrap; gap:.7rem}
+.cta-row .btn.ghost{background:var(--paper)}
 @media (max-width: 760px){ .hero-foot{grid-template-columns:1fr} }
 .hero-facts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); gap:0; margin:0}
 .hero-facts > div{padding:1.1rem 1rem 0 0; display:grid; gap:.35rem; min-width:0}
@@ -239,11 +238,8 @@ html.lenis, html.lenis body{height:auto}
 @media (pointer: coarse), (hover: none){ .cursor{display:none} }
 
 section{scroll-margin-top:84px}
-.rv-line{display:block; overflow:hidden; padding-bottom:.08em; margin-bottom:-.08em}
-.rv-line > span{display:inline-block}
-.sec-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:1.4rem 2rem; align-items:end; margin-bottom:clamp(30px,4.5vw,56px)}
-.sec-head h2{font-size:clamp(2rem,5vw,4.2rem); line-height:.98; letter-spacing:-.04em}
-@media (max-width: 760px){ .sec-head{grid-template-columns:1fr} }
+.sec-head{margin-bottom:clamp(30px,4.5vw,56px)}
+.sec-head h2{font-size:clamp(2rem,5vw,4.2rem); line-height:.98; letter-spacing:-.04em; max-width:20ch}
 .packs{padding-block:clamp(66px,10vw,128px)}
 .pack-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line)}
 .pack{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) auto; align-items:center; gap:1rem 1.5rem; padding:clamp(20px,2.6vw,34px) clamp(6px,1.2vw,18px); border-bottom:1px solid var(--line); position:relative; isolation:isolate; overflow:hidden; transition:color var(--t-fill) var(--ease-out)}
@@ -258,7 +254,7 @@ section{scroll-margin-top:84px}
 }
 .pack-head{display:grid; gap:.45rem; min-width:0}
 .pack-tag{font-family:var(--f-mono); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); transition:color var(--t-fill) var(--ease-out)}
-.pack-name{font-family:var(--f-display); font-size:clamp(1.9rem,5vw,4.1rem); font-weight:600; letter-spacing:-.045em; line-height:1}
+.pack-name{font-family:var(--f-display); font-size:clamp(1.9rem,5vw,4.1rem); font-weight:600; letter-spacing:-.04em; line-height:1}
 .pack-desc{color:var(--ink-2); max-width:40ch; min-width:0; transition:color var(--t-fill) var(--ease-out)}
 .pack-price{font-family:var(--f-display); font-size:clamp(1.2rem,2.3vw,1.9rem); font-weight:600; letter-spacing:-.03em; white-space:nowrap; color:var(--pico-text); transition:color var(--t-fill) var(--ease-out)}
 @media (max-width: 880px){ .pack{grid-template-columns:minmax(0,1fr) auto} .pack-desc{grid-column:1 / -1; grid-row:2} .pack-price{align-self:start} }
@@ -272,7 +268,6 @@ section{scroll-margin-top:84px}
 
 .process{padding-block:clamp(66px,10vw,120px); background:var(--ink); color:var(--paper); margin-inline:calc(50% - 50vw); padding-inline:max(var(--gutter), calc(50vw - 50%))}
 .process-inner{max-width:var(--maxw); margin-inline:auto; display:grid; gap:clamp(30px,4vw,52px)}
-.process .kicker{color:color-mix(in srgb, var(--paper) 70%, transparent)}
 .process h2{font-size:clamp(2rem,5vw,4.2rem); line-height:.98; max-width:18ch}
 .process h2 em{color:var(--pico-inv)}
 .steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,3vw,36px)}
@@ -293,7 +288,6 @@ section{scroll-margin-top:84px}
 .manifesto-sign .avatar{width:42px; height:42px; border-radius:50%; background:var(--ink); display:grid; place-items:center; flex:none}
 
 .contact{background:var(--pico); color:var(--on-pico); border-radius:clamp(18px,3vw,32px); padding:clamp(32px,6.5vw,86px) clamp(22px,5vw,66px); margin-block:clamp(18px,3vw,36px); display:grid; gap:clamp(24px,4vw,42px); position:relative; overflow:hidden; isolation:isolate}
-.contact .kicker{color:inherit; opacity:.75}
 .contact h2{font-size:clamp(2.3rem,7vw,6rem); line-height:.94; max-width:14ch}
 .contact-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.1rem; border-top:1px solid color-mix(in srgb, var(--on-pico) 30%, transparent); padding-top:clamp(18px,3vw,30px)}
 .email{font-family:var(--f-display); font-size:clamp(1.2rem,3.2vw,2.3rem); font-weight:600; letter-spacing:-.03em; overflow-wrap:anywhere; min-width:0; text-decoration:none}
@@ -307,7 +301,9 @@ section{scroll-margin-top:84px}
 .field label{font-family:var(--f-mono); font-size:.75rem; letter-spacing:.07em; text-transform:uppercase}
 .field input, .field textarea{font:inherit; font-size:1rem; color:var(--on-pico); background:color-mix(in srgb, #fff 28%, transparent); border:1px solid color-mix(in srgb, var(--on-pico) 35%, transparent); border-radius:14px; padding:.8rem .95rem; width:100%; box-sizing:border-box; resize:vertical}
 .field input:focus, .field textarea:focus{outline:2px solid var(--on-pico); outline-offset:1px}
-.field textarea::placeholder{color:color-mix(in srgb, var(--on-pico) 60%, transparent)}
+.field textarea::placeholder{color:color-mix(in srgb, var(--on-pico) 74%, transparent)}
+.btn:disabled{cursor:progress; opacity:.8}
+.btn:disabled:active{transform:none}
 .consent{display:flex; gap:.6rem; align-items:flex-start; font-size:.92rem; line-height:1.4}
 .consent input{width:18px; height:18px; margin:.1rem 0 0; accent-color:var(--on-pico); flex:none}
 .consent a{color:inherit}
@@ -339,7 +335,7 @@ section{scroll-margin-top:84px}
 
 .founder{margin-block:clamp(40px,6vw,72px) 0; border:1px solid var(--line); border-radius:clamp(18px,3vw,28px); padding:clamp(24px,4vw,48px); display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:clamp(20px,4vw,48px); align-items:center; background:var(--card)}
 @media (max-width: 880px){ .founder{grid-template-columns:1fr} }
-.founder h2{font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1; letter-spacing:-.04em; margin-top:1rem}
+.founder h2{font-size:clamp(1.9rem,4.4vw,3.4rem); line-height:1; letter-spacing:-.04em}
 .founder p{color:var(--ink-2); margin-top:.9rem; max-width:52ch}
 .founder ul{list-style:none; margin:0; padding:0; display:grid; gap:.7rem}
 .founder li{display:grid; grid-template-columns:auto 1fr; gap:.7rem; align-items:baseline}
@@ -354,9 +350,9 @@ section{scroll-margin-top:84px}
 .faq{border-top:1px solid var(--line); padding-block:clamp(56px,8vw,100px)}
 .faq-list{border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
-.faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-block:clamp(16px,2.2vw,24px); font-family:var(--f-display); font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:600; letter-spacing:-.03em; line-height:1.2}
+.faq-item summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-block:clamp(16px,2.2vw,24px); font-family:var(--f-display); font-size:clamp(1.15rem,2.4vw,1.6rem); font-weight:600; letter-spacing:-.03em; line-height:1.3}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+"; font-family:var(--f-mono); font-weight:400; font-size:1.2rem; color:var(--pico-text); flex:none; transition:transform 260ms var(--ease-out)}
+.faq-item summary::after{content:""; width:14px; height:14px; color:var(--pico-text); background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat, linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat; flex:none; transition:transform 260ms var(--ease-out)}
 .faq-item summary{-webkit-tap-highlight-color:transparent; transition:color var(--t-hover) ease}
 @media (hover: hover) and (pointer: fine){ .faq-item summary:hover{color:var(--pico-text)} }
 .faq-body{overflow:hidden}
@@ -404,7 +400,7 @@ section{scroll-margin-top:84px}
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="header-right">
-      <a class="btn small" href="#contacto">Pedir presupuesto<span class="arr">→</span></a>
+      <a class="btn small" href="#contacto">Pedir presupuesto<svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menú</button>
     </div>
   </header>
@@ -429,7 +425,7 @@ section{scroll-margin-top:84px}
       <div class="hero-foot">
         <p class="lead">Diseñamos y desarrollamos webs corporativas, tiendas online y soluciones a medida para negocios de Murcia. Nos ocupamos también de su posicionamiento en Google y de su mantenimiento, con <strong>un único interlocutor</strong> durante todo el proyecto.</p>
         <div class="cta-row">
-          <a class="btn" href="#paquetes">Ver servicios <span class="arr">→</span></a>
+          <a class="btn" href="#paquetes">Ver servicios <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
           <a class="btn ghost" href="#contacto">Contactar</a>
         </div>
       </div>
@@ -450,7 +446,6 @@ section{scroll-margin-top:84px}
 
     <section class="founder" id="fundadores" aria-labelledby="founderTitle">
       <div>
-        <p class="kicker">Oferta de lanzamiento</p>
         <h2 id="founderTitle">Clientes fundadores: <em>25 % de descuento.</em></h2>
         <p>Con motivo de su apertura, Mirla Studio ofrece a sus cinco primeros clientes un 25 % de descuento en cualquier servicio contratado.</p>
         <p class="deadline">5 plazas · hasta el 13 de diciembre de 2026</p>
@@ -463,29 +458,28 @@ section{scroll-margin-top:84px}
 
     <section class="packs" id="paquetes">
       <div class="sec-head">
-        <p class="kicker">Proyectos web</p>
         <h2>Pago único, <em>presupuesto cerrado.</em></h2>
       </div>
       <ul class="pack-list">
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/web-corporativa</span><span class="pack-name">Web corporativa</span></div>
           <p class="pack-desc">Desde una landing page hasta una web completa con todas las secciones que requiera tu negocio. Adaptada a móvil, con formulario de contacto y analítica configurada.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/tienda-online</span><span class="pack-name">Tienda online</span></div>
           <p class="pack-desc">Tienda preparada para vender: catálogo, carrito, pasarela de pago y gestión de envíos. Incluye formación para que administres tus productos con autonomía.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/ficha-de-google</span><span class="pack-name">Ficha de Google</span></div>
           <p class="pack-desc">Creación y optimización de tu perfil de empresa en Google: categorías, servicios, horarios, fotografías y ubicación. Es la base de la visibilidad en búsquedas locales y en Google Maps.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/a-medida</span><span class="pack-name">Desarrollo a medida</span></div>
           <p class="pack-desc">Funcionalidades específicas para tu web o tu negocio: reservas y citas online, generación de presupuestos, área de clientes, control de inventario o herramientas de gestión interna.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
       </ul>
       <p class="svc-note">Cada proyecto es diferente, por eso no trabajamos con tarifas de catálogo. Cuéntanos qué necesitas y te enviaremos un presupuesto detallado por escrito, sin compromiso. También puedes escribirnos a <a href="mailto:hola@mirlastudio.es?subject=Presupuesto">hola@mirlastudio.es</a>.</p>
@@ -493,42 +487,40 @@ section{scroll-margin-top:84px}
 
     <section class="keep" id="mantenimiento">
       <div class="sec-head">
-        <p class="kicker">Servicios mensuales</p>
         <h2>Después de publicar, <em>empieza el trabajo.</em></h2>
       </div>
       <ul class="pack-list">
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/mantenimiento</span><span class="pack-name">Mantenimiento web</span></div>
           <p class="pack-desc">Alojamiento, copias de seguridad, actualizaciones, seguridad y pequeños cambios de contenido cuando los necesites.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/gestion-google</span><span class="pack-name">Gestión de la ficha</span></div>
           <p class="pack-desc">Publicaciones periódicas, fotografías actualizadas y respuesta a las reseñas para mantener tu ficha de Google activa y mejorar su posición en el mapa.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/seo-local</span><span class="pack-name">SEO local</span></div>
           <p class="pack-desc">Trabajo continuo para mejorar tu visibilidad en las búsquedas de tu zona: contenidos, enlaces, velocidad de carga e informe mensual de resultados.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
         <li class="pack">
           <div class="pack-head"><span class="pack-tag">/redes-sociales</span><span class="pack-name">Redes sociales</span></div>
           <p class="pack-desc">Gestión de dos redes sociales, con entre ocho y doce publicaciones al mes según un calendario acordado contigo.</p>
-          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
+          <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </li>
       </ul>
       <div class="combo">
         <h3>Plan integral</h3>
         <p>Mantenimiento web, gestión de la ficha de Google y SEO local en una sola cuota: un único interlocutor, un informe mensual conjunto y una sola factura.</p>
-        <a class="amount" href="#contacto">Solicitar plan integral →</a>
+        <a class="amount" href="#contacto">Solicitar plan integral <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
       </div>
     </section>
   </main>
 
   <section class="process" id="proceso">
     <div class="process-inner">
-      <p class="kicker">Cómo trabajamos</p>
       <h2>Un proceso claro, <em>sin sorpresas.</em></h2>
       <div class="steps">
         <div class="step"><span class="step-n">01</span><h3>Primera reunión</h3><p>Una conversación de unos 30 minutos para conocer tu negocio, tus objetivos y lo que necesitas mejorar.</p></div>
@@ -540,7 +532,6 @@ section{scroll-margin-top:84px}
 
   <div>
     <section class="manifesto">
-      <p class="kicker">Nuestro enfoque</p>
       <p class="manifesto-text" id="manifesto">Una web bien diseñada solo cumple su función si tus clientes la encuentran. Por eso no nos limitamos a entregarla: <em>la acompañamos hasta que da resultados.</em></p>
       <div class="manifesto-sign">
         <span class="avatar" aria-hidden="true">
@@ -556,7 +547,6 @@ section{scroll-margin-top:84px}
 
     <section class="faq" id="preguntas" aria-labelledby="faqTitle">
       <div class="sec-head">
-        <p class="kicker">Preguntas frecuentes</p>
         <h2 id="faqTitle">Diseño web en Murcia: <em>lo que nos preguntan.</em></h2>
       </div>
       <div class="faq-list">
@@ -591,7 +581,6 @@ section{scroll-margin-top:84px}
          Cuando exista: pegar el código de Brevo dentro de #brevo-form y quitar el atributo hidden de la sección.
          Brevo con doble confirmación (double opt-in) y casilla de privacidad que enlace a aviso-legal.html. -->
     <section class="guide" id="guia" hidden>
-      <p class="kicker">Guía gratis</p>
       <h2>7 cosas que tu web debe tener <em>para que te llamen.</em></h2>
       <p class="svc-note" style="margin-top:0">Te la enviamos por correo. Sin spam: puedes darte de baja con un clic en cualquier momento.</p>
       <div id="brevo-form"></div>
@@ -599,7 +588,6 @@ section{scroll-margin-top:84px}
 
     <section class="contact" id="contacto">
       <span class="contact-orb" aria-hidden="true"></span>
-      <p class="kicker">Contacto</p>
       <h2>Hablemos de tu proyecto.</h2>
       <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="c50bce59-b42f-4c2b-b574-199a51f05432">
@@ -612,7 +600,7 @@ section{scroll-margin-top:84px}
         <div class="field full"><label for="f-msg">¿Qué necesitas?</label><textarea id="f-msg" name="mensaje" rows="4" required placeholder="Cuéntanos a qué se dedica tu negocio y qué necesitas."></textarea></div>
         <label class="consent full"><input type="checkbox" name="acepto_privacidad" value="sí" required><span>He leído y acepto la <a href="aviso-legal.html#datos">política de privacidad</a>.</span></label>
         <div class="form-foot full">
-          <button class="btn" type="submit" id="sendBtn">Enviar mensaje <span class="arr">→</span></button>
+          <button class="btn" type="submit" id="sendBtn">Enviar mensaje <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></button>
           <span class="form-status" id="formStatus" role="status" aria-live="polite"></span>
         </div>
       </form>
@@ -625,7 +613,7 @@ section{scroll-margin-top:84px}
       <div class="contact-row">
         <a class="email" id="email" href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a>
         <div class="contact-actions">
-          <a class="btn ghost" href="https://www.instagram.com/mirlastudio.es/" target="_blank" rel="noopener">Instagram <span class="arr">→</span></a>
+          <a class="btn ghost" href="https://www.instagram.com/mirlastudio.es/" target="_blank" rel="noopener">Instagram <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8h10.5M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
     </section>
@@ -810,38 +798,10 @@ section{scroll-margin-top:84px}
   ScrollTrigger.create({ onUpdate: function(self){ skewTo(gsap.utils.clamp(-10, 10, self.getVelocity() / -260)); } });
   ScrollTrigger.addEventListener('scrollEnd', function(){ skewTo(0); });
 
-  /* Titulares de sección: suben desde detrás de una máscara; la etiqueta solo aparece */
-  gsap.utils.toArray('.sec-head h2, .process h2, .contact h2').forEach(function(h){
-    var line = document.createElement('span'), inner = document.createElement('span');
-    line.className = 'rv-line';
-    while (h.firstChild) inner.appendChild(h.firstChild);
-    line.appendChild(inner); h.appendChild(line);
-    var kick = h.parentNode.querySelector('.kicker');
-    var t = gsap.timeline({ scrollTrigger: { trigger: h, start: 'top 88%', once: true } });
-    t.from(inner, { yPercent: 105, duration: 1, ease: 'expo.out' }, 0);
-    if (kick) t.from(kick, { opacity: 0, duration: .6, ease: 'power1.out' }, 0);
-  });
-
-  /* Filas de servicios: aparecen por tandas al llegar, con huecos que se acortan */
-  gsap.set('.pack', { y: 24, opacity: 0 });
-  ScrollTrigger.batch('.pack', { start: 'top 90%', once: true,
-    onEnter: function(batch){
-      gsap.to(batch, { y: 0, opacity: 1, duration: .8, ease: 'expo.out',
-        stagger: { each: .08, ease: 'power2.out' }, clearProps: 'transform,opacity' });
-    } });
-
-  gsap.from('.founder', { y: 24, opacity: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.founder', start: 'top 88%', once: true } });
-  gsap.from('.combo', { y: 24, opacity: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.combo', start: 'top 90%', once: true } });
-
-  /* Proceso: cada paso sube y su línea ámbar se dibuja a la vez */
+  /* Proceso: el texto ya está ahí; solo la línea ámbar recorre 01, 02 y 03 */
   var steps = gsap.utils.toArray('.step');
-  steps.forEach(function(st){ gsap.set(st.children, { y: 18, opacity: 0 }); });
-  ScrollTrigger.create({ trigger: '.steps', start: 'top 85%', once: true, onEnter: function(){
-    steps.forEach(function(st, i){
-      var d = [0, .12, .21][i] || i * .1;
-      gsap.to(st.children, { y: 0, opacity: 1, duration: .8, ease: 'expo.out', delay: d });
-      setTimeout(function(){ st.classList.add('drawn'); }, d * 1000);
-    });
+  ScrollTrigger.create({ trigger: '.steps', start: 'top 80%', once: true, onEnter: function(){
+    steps.forEach(function(st, i){ setTimeout(function(){ st.classList.add('drawn'); }, i * 260); });
   } });
 
   var man = document.getElementById('manifesto');
