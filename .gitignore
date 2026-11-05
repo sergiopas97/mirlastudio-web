@@ -1,3 +1,7 @@
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Skills instaladas en local (npx skills add); no se suben
+.agents/
+.claude/skills/
