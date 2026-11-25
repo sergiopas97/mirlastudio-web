@@ -48,13 +48,14 @@
     "@type": "OfferCatalog",
     "name": "Servicios de Mirla Studio",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño de webs corporativas" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tiendas online" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo a medida y reservas online" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alta y optimización de ficha de Google" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento web" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño de webs corporativas", "url": "https://mirlastudio.es/servicios/diseno-web/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tiendas online", "url": "https://mirlastudio.es/servicios/tienda-online/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo a medida y reservas online", "url": "https://mirlastudio.es/servicios/desarrollo-a-medida/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alta y optimización de ficha de Google", "url": "https://mirlastudio.es/servicios/ficha-de-google/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO local", "url": "https://mirlastudio.es/servicios/seo-local/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento web", "url": "https://mirlastudio.es/servicios/mantenimiento-web/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales", "url": "https://mirlastudio.es/servicios/redes-sociales/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de la ficha de Google", "url": "https://mirlastudio.es/servicios/gestion-ficha-google/" } }
     ]
   },
   "sameAs": ["https://www.instagram.com/mirlastudio.es/"]
@@ -347,6 +348,17 @@ section{scroll-margin-top:84px}
 .footer ul{display:flex; flex-wrap:wrap; gap:.4rem 1.1rem; list-style:none; margin:0; padding:0}
 .footer a{text-decoration:none}
 .footer a:hover{color:var(--ink)}
+.pack-link{text-decoration:none}
+.pack-link::after{content:""; position:absolute; inset:0; z-index:1}
+.pack-link:focus-visible{outline:none}
+.pack:has(.pack-link:focus-visible){outline:2px solid var(--pico); outline-offset:-2px}
+.pack-cta{position:relative; z-index:2}
+.pack-link:hover{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:.12em; text-decoration-color:var(--pico)}
+.footer-svc{display:grid; gap:.6rem; padding-block:clamp(36px,5vw,56px) 0; border-top:1px solid var(--line); margin-top:clamp(20px,3vw,36px)}
+.footer-svc h2{font-family:var(--f-mono); font-weight:400; font-size:.74rem; letter-spacing:.04em; color:var(--ink-2)}
+.footer-svc ul{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; list-style:none; margin:0; padding:0}
+.footer-svc a{text-decoration:none; font-size:.95rem}
+.footer-svc a:hover{text-decoration:underline; text-decoration-color:var(--pico)}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important}
   .band-track{animation:none}
@@ -438,27 +450,27 @@ section{scroll-margin-top:84px}
       </div>
       <ul class="pack-list">
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/web-corporativa</span><span class="pack-name">Web corporativa</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/diseno-web</span><a class="pack-name pack-link" href="/servicios/diseno-web/">Web corporativa</a></div>
           <p class="pack-desc">Desde una landing page hasta una web completa con todas las secciones que requiera tu negocio. Adaptada a móvil, con formulario de contacto y analítica configurada.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/tienda-online</span><span class="pack-name">Tienda online</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/tienda-online</span><a class="pack-name pack-link" href="/servicios/tienda-online/">Tienda online</a></div>
           <p class="pack-desc">Tienda preparada para vender: catálogo, carrito, pasarela de pago y gestión de envíos. Incluye formación para que administres tus productos con autonomía.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/ficha-de-google</span><span class="pack-name">Ficha de Google</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/ficha-de-google</span><a class="pack-name pack-link" href="/servicios/ficha-de-google/">Ficha de Google</a></div>
           <p class="pack-desc">Creación y optimización de tu perfil de empresa en Google: categorías, servicios, horarios, fotografías y ubicación. Es la base de la visibilidad en búsquedas locales y en Google Maps.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/a-medida</span><span class="pack-name">Desarrollo a medida</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/desarrollo-a-medida</span><a class="pack-name pack-link" href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a></div>
           <p class="pack-desc">Funcionalidades específicas para tu web o tu negocio: reservas y citas online, generación de presupuestos, área de clientes, control de inventario o herramientas de gestión interna.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
       </ul>
-      <p class="svc-note">Cada proyecto es diferente, por eso no trabajamos con tarifas de catálogo. Cuéntanos qué necesitas y te enviaremos un presupuesto detallado por escrito, sin compromiso. También puedes escribirnos a <a href="mailto:hola@mirlastudio.es?subject=Presupuesto">hola@mirlastudio.es</a>.</p>
+      <p class="svc-note">Cada proyecto es diferente, por eso no trabajamos con tarifas de catálogo. Cuéntanos qué necesitas y te enviaremos un presupuesto detallado por escrito, sin compromiso. También puedes escribirnos a <a href="mailto:hola@mirlastudio.es?subject=Presupuesto">hola@mirlastudio.es</a> o <a href="/servicios/">ver todos los servicios en detalle</a>.</p>
     </section>
 
     <section class="keep" id="mantenimiento">
@@ -468,22 +480,22 @@ section{scroll-margin-top:84px}
       </div>
       <ul class="pack-list">
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/mantenimiento</span><span class="pack-name">Mantenimiento web</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/mantenimiento-web</span><a class="pack-name pack-link" href="/servicios/mantenimiento-web/">Mantenimiento web</a></div>
           <p class="pack-desc">Alojamiento, copias de seguridad, actualizaciones, seguridad y pequeños cambios de contenido cuando los necesites.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/gestion-google</span><span class="pack-name">Gestión de la ficha</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/gestion-ficha-google</span><a class="pack-name pack-link" href="/servicios/gestion-ficha-google/">Gestión de la ficha</a></div>
           <p class="pack-desc">Publicaciones periódicas, fotografías actualizadas y respuesta a las reseñas para mantener tu ficha de Google activa y mejorar su posición en el mapa.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/seo-local</span><span class="pack-name">SEO local</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/seo-local</span><a class="pack-name pack-link" href="/servicios/seo-local/">SEO local</a></div>
           <p class="pack-desc">Trabajo continuo para mejorar tu visibilidad en las búsquedas de tu zona: contenidos, enlaces, velocidad de carga e informe mensual de resultados.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/redes-sociales</span><span class="pack-name">Redes sociales</span></div>
+          <div class="pack-head"><span class="pack-tag">/servicios/redes-sociales</span><a class="pack-name pack-link" href="/servicios/redes-sociales/">Redes sociales</a></div>
           <p class="pack-desc">Gestión de dos redes sociales, con entre ocho y doce publicaciones al mes según un calendario acordado contigo.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
@@ -601,9 +613,14 @@ section{scroll-margin-top:84px}
     </section>
   </div>
 
+  <nav class="footer-svc" aria-labelledby="footSvc">
+    <h2 id="footSvc">Servicios de Mirla Studio</h2>
+    <ul><li><a href="/servicios/diseno-web/">Diseño de páginas web</a></li><li><a href="/servicios/tienda-online/">Tienda online</a></li><li><a href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a></li><li><a href="/servicios/ficha-de-google/">Ficha de Google</a></li><li><a href="/servicios/mantenimiento-web/">Mantenimiento web</a></li><li><a href="/servicios/gestion-ficha-google/">Gestión de la ficha de Google</a></li><li><a href="/servicios/seo-local/">SEO local</a></li><li><a href="/servicios/redes-sociales/">Redes sociales</a></li></ul>
+  </nav>
   <footer class="footer">
     <span>© Mirla Studio <span id="year">2026</span> · Diseño web en Murcia y toda la Región · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
     <ul>
+      <li><a href="/servicios/">Servicios</a></li>
       <li><a href="aviso-legal.html">Aviso legal y privacidad</a></li>
     </ul>
   </footer>
