@@ -222,6 +222,24 @@ section{scroll-margin-top:84px}
   .band-track{animation:none}
 }
 
+/* ---------- Menú de servicios ---------- */
+.nav-drop{position:relative}
+.nav .nav-drop-btn{display:inline-flex; align-items:center; gap:.35rem}
+.nav-drop-btn svg{width:10px; height:6px; transition:transform .35s var(--ease)}
+.nav-drop:hover .nav-drop-btn svg, .nav-drop:focus-within .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-panel{position:absolute; top:100%; left:50%; padding-top:14px; transform:translate(-50%,6px); opacity:0; visibility:hidden; transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s .3s; z-index:60}
+.nav-drop:hover .nav-panel, .nav-drop:focus-within .nav-panel{opacity:1; visibility:visible; transform:translate(-50%,0); transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s}
+.nav-box{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 22px 14px; display:grid; grid-template-columns:repeat(2,minmax(190px,1fr)); gap:0 30px; box-shadow:0 22px 44px -24px rgba(23,21,15,.4)}
+.nav-box p{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.04em; color:var(--ink-2); margin-bottom:.35rem}
+.nav .nav-box a{display:block; padding:.38rem 0; color:var(--ink); font-size:.95rem; white-space:nowrap}
+.nav .nav-box a::after{display:none}
+.nav .nav-box a:hover, .nav .nav-box a[aria-current]{color:var(--pico-text)}
+.nav .nav-box .nav-all{grid-column:1 / -1; margin-top:.6rem; padding-top:.7rem; border-top:1px solid var(--line); font-size:.88rem; color:var(--ink-2)}
+.mobile-nav{overflow-y:auto}
+.mobile-sub{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.1rem 1rem; padding:.5rem 0 .8rem; border-bottom:1px solid var(--line)}
+.mobile-nav .mobile-sub a{font-family:var(--f-body); font-size:1rem; font-weight:500; letter-spacing:0; border:0; padding-block:.3rem; color:var(--ink-2)}
+.mobile-nav .mobile-sub a[aria-current]{color:var(--pico-text)}
+
 /* ---------- Páginas de servicio ---------- */
 .svc-hero{position:relative; padding-block:clamp(48px,8vw,96px) clamp(32px,5vw,56px)}
 .svc-hero .hero-title{font-size:clamp(2.6rem,8.4vw,7rem)}
