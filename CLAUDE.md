@@ -9,6 +9,7 @@ Web de una página en HTML estático, sin compilación. Se publica con GitHub Pa
 - `favicon.svg`, `logo.png`, `apple-touch-icon.png`, `og.png`: iconos e imagen para compartir.
 - `servicios/`: una página por servicio (`servicios/<slug>/index.html`) y el índice `servicios/index.html`. Comparten `servicios/servicio.css` (base copiada del CSS de `index.html`) y `servicios/servicio.js` (bandada, menú, formulario, animaciones). Si cambias la identidad o el formulario en `index.html`, cámbialo también ahí. Cada página lleva su JSON-LD (Service, BreadcrumbList, FAQPage) y el formulario con el asunto del servicio. Las cajas de oferta fundador llevan `data-fundador` y se ocultan solas después del 13/12/2026.
 - `robots.txt`, `sitemap.xml`: SEO. Si añades una página, añádela al sitemap (y a `seo/sitemap.xml`).
+- `fonts/`: tipografías alojadas en la propia web (woff2 aligerados). Se cargan con `@font-face` en cada página; no volver a enlazar Google Fonts.
 - `seo/`: copia de referencia de las etiquetas SEO.
 
 ## Identidad (A)

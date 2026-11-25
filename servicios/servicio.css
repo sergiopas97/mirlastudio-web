@@ -1,4 +1,8 @@
 /* Estilos de las páginas de servicio (/servicios/). Base copiada de index.html: si cambias la identidad allí, cámbiala aquí también. */
+@font-face{font-family:"Fraunces"; font-style:normal; font-weight:400 700; font-display:swap; src:url(/fonts/fraunces.woff2) format("woff2")}
+@font-face{font-family:"Fraunces"; font-style:italic; font-weight:400; font-display:swap; src:url(/fonts/fraunces-italic.woff2) format("woff2")}
+@font-face{font-family:"Archivo"; font-style:normal; font-weight:400 600; font-display:swap; src:url(/fonts/archivo.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono"; font-style:normal; font-weight:400 500; font-display:swap; src:url(/fonts/jetbrains-mono.woff2) format("woff2")}
 
 :root{
   --paper:#F7F3EC; --paper-2:#EFEADF; --ink:#17150F; --ink-2:#5B5549; --ink-3:#8C8577;
