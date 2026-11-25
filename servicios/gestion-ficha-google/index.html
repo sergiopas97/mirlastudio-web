@@ -181,11 +181,18 @@
       mirla
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="/servicios/">Servicios</a>
+      <div class="nav-drop">
+        <a class="nav-drop-btn" href="/servicios/">Servicios <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
+        <div class="nav-panel"><div class="nav-box">
+          <div><p>Proyectos</p><a href="/servicios/diseno-web/">Diseño de páginas web</a><a href="/servicios/tienda-online/">Tienda online</a><a href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a><a href="/servicios/ficha-de-google/">Ficha de Google</a></div>
+          <div><p>Cada mes</p><a href="/servicios/mantenimiento-web/">Mantenimiento web</a><a href="/servicios/gestion-ficha-google/" aria-current="page">Gestión de la ficha de Google</a><a href="/servicios/seo-local/">SEO local</a><a href="/servicios/redes-sociales/">Redes sociales</a></div>
+          <a class="nav-all" href="/servicios/">Ver todos los servicios</a>
+        </div></div>
+      </div>
       <a href="/#fundadores">Oferta</a>
-      <a href="/#proceso">Cómo trabajamos</a>
+      <a href="/como-trabajamos/">Cómo trabajamos</a>
       <a href="/#preguntas">Preguntas</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/contacto/">Contacto</a>
     </nav>
     <div class="header-right">
       <a class="btn small" href="#contacto" data-magnetic>Pedir presupuesto<span class="arr" aria-hidden="true">→</span></a>
@@ -196,17 +203,16 @@
   <nav class="mobile-nav" id="mobileNav" hidden aria-label="Menú móvil">
     <a href="/">Inicio</a>
     <a href="/servicios/">Servicios</a>
+    <div class="mobile-sub"><a href="/servicios/diseno-web/">Diseño de páginas web</a><a href="/servicios/tienda-online/">Tienda online</a><a href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a><a href="/servicios/ficha-de-google/">Ficha de Google</a><a href="/servicios/mantenimiento-web/">Mantenimiento web</a><a href="/servicios/gestion-ficha-google/" aria-current="page">Gestión de la ficha de Google</a><a href="/servicios/seo-local/">SEO local</a><a href="/servicios/redes-sociales/">Redes sociales</a></div>
     <a href="/#fundadores">Oferta de fundador</a>
-    <a href="/#proceso">Cómo trabajamos</a>
-    <a href="#contacto">Contacto</a>
+    <a href="/como-trabajamos/">Cómo trabajamos</a>
+    <a href="/contacto/">Contacto</a>
   </nav>
 
   <main id="contenido">
     <section class="hero svc-hero" aria-labelledby="svcTitle">
       <canvas id="bandada" aria-hidden="true"></canvas>
-      <nav class="crumbs" aria-label="Estás aquí"><ol><li><a href="/">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><span aria-current="page">Gestión de la ficha de Google</span></li></ol></nav>
       <div class="hero-inner">
-        <p class="svc-path">mirlastudio.es/servicios/gestion-ficha-google/</p>
         <h1 class="hero-title" id="svcTitle"><span class="line"><span>Gestión de la ficha</span></span><span class="line"><span><em>de Google, cada mes</em></span></span></h1>
         <div class="hero-foot">
           <p class="lead">Mantenemos viva la ficha de Google de tu negocio: publicaciones periódicas, fotos actualizadas y respuesta a las reseñas. Para que quien te encuentre en Maps vea un negocio activo y cuidado, y tú no tengas que acordarte.</p>
@@ -327,17 +333,17 @@
       </div>
       <ul class="pack-list">
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/ficha-de-google</span><a class="pack-name pack-link" href="/servicios/ficha-de-google/">Ficha de Google</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/ficha-de-google/">Ficha de Google</a></div>
           <p class="pack-desc">Alta y optimización de tu Perfil de Empresa en Google, la base para aparecer en Maps y en búsquedas locales.</p>
           <span class="pack-go" aria-hidden="true">Ver servicio <span class="arr">→</span></span>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/seo-local</span><a class="pack-name pack-link" href="/servicios/seo-local/">SEO local</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/seo-local/">SEO local</a></div>
           <p class="pack-desc">Trabajo continuo para que tu negocio aparezca en las búsquedas de tu zona, con un informe mensual claro.</p>
           <span class="pack-go" aria-hidden="true">Ver servicio <span class="arr">→</span></span>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/redes-sociales</span><a class="pack-name pack-link" href="/servicios/redes-sociales/">Redes sociales</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/redes-sociales/">Redes sociales</a></div>
           <p class="pack-desc">Gestión de dos redes sociales con entre ocho y doce publicaciones al mes, según un calendario acordado contigo.</p>
           <span class="pack-go" aria-hidden="true">Ver servicio <span class="arr">→</span></span>
         </li>
@@ -388,6 +394,8 @@
     <span>© Mirla Studio <span id="year">2026</span> · Murcia, la Región, la Vega Baja y en remoto · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
     <ul>
       <li><a href="/">Inicio</a></li>
+      <li><a href="/como-trabajamos/">Cómo trabajamos</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
       <li><a href="/aviso-legal.html">Aviso legal y privacidad</a></li>
     </ul>
   </footer>

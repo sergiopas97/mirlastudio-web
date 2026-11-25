@@ -357,6 +357,22 @@ section{scroll-margin-top:84px}
 .pack:has(.pack-link:focus-visible){outline:2px solid var(--pico); outline-offset:-2px}
 .pack-cta{position:relative; z-index:2}
 .pack-link:hover{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:.12em; text-decoration-color:var(--pico)}
+.nav-drop{position:relative}
+.nav .nav-drop-btn{display:inline-flex; align-items:center; gap:.35rem}
+.nav-drop-btn svg{width:10px; height:6px; transition:transform .35s var(--ease)}
+.nav-drop:hover .nav-drop-btn svg, .nav-drop:focus-within .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-panel{position:absolute; top:100%; left:50%; padding-top:14px; transform:translate(-50%,6px); opacity:0; visibility:hidden; transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s .3s; z-index:60}
+.nav-drop:hover .nav-panel, .nav-drop:focus-within .nav-panel{opacity:1; visibility:visible; transform:translate(-50%,0); transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s}
+.nav-box{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 22px 14px; display:grid; grid-template-columns:repeat(2,minmax(190px,1fr)); gap:0 30px; box-shadow:0 22px 44px -24px rgba(23,21,15,.4)}
+.nav-box p{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.04em; color:var(--ink-2); margin-bottom:.35rem}
+.nav .nav-box a{display:block; padding:.38rem 0; color:var(--ink); font-size:.95rem; white-space:nowrap}
+.nav .nav-box a::after{display:none}
+.nav .nav-box a:hover, .nav .nav-box a[aria-current]{color:var(--pico-text)}
+.nav .nav-box .nav-all{grid-column:1 / -1; margin-top:.6rem; padding-top:.7rem; border-top:1px solid var(--line); font-size:.88rem; color:var(--ink-2)}
+.mobile-nav{overflow-y:auto}
+.mobile-sub{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.1rem 1rem; padding:.5rem 0 .8rem; border-bottom:1px solid var(--line)}
+.mobile-nav .mobile-sub a{font-family:var(--f-body); font-size:1rem; font-weight:500; letter-spacing:0; border:0; padding-block:.3rem; color:var(--ink-2)}
+.mobile-nav .mobile-sub a[aria-current]{color:var(--pico-text)}
 .footer-svc{display:grid; gap:.6rem; padding-block:clamp(36px,5vw,56px) 0; border-top:1px solid var(--line); margin-top:clamp(20px,3vw,36px)}
 .footer-svc h2{font-family:var(--f-mono); font-weight:400; font-size:.74rem; letter-spacing:.04em; color:var(--ink-2)}
 .footer-svc ul{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; list-style:none; margin:0; padding:0}
@@ -382,11 +398,17 @@ section{scroll-margin-top:84px}
       mirla
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#paquetes">Webs</a>
-      <a href="#mantenimiento">Mantenimiento</a>
+      <div class="nav-drop">
+        <a class="nav-drop-btn" href="/servicios/">Servicios <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
+        <div class="nav-panel"><div class="nav-box">
+          <div><p>Proyectos</p><a href="/servicios/diseno-web/">Diseño de páginas web</a><a href="/servicios/tienda-online/">Tienda online</a><a href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a><a href="/servicios/ficha-de-google/">Ficha de Google</a></div>
+          <div><p>Cada mes</p><a href="/servicios/mantenimiento-web/">Mantenimiento web</a><a href="/servicios/gestion-ficha-google/">Gestión de la ficha de Google</a><a href="/servicios/seo-local/">SEO local</a><a href="/servicios/redes-sociales/">Redes sociales</a></div>
+          <a class="nav-all" href="/servicios/">Ver todos los servicios</a>
+        </div></div>
+      </div>
       <a href="#fundadores">Oferta</a>
-      <a href="#proceso">Cómo trabajamos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/como-trabajamos/">Cómo trabajamos</a>
+      <a href="/contacto/">Contacto</a>
     </nav>
     <div class="header-right">
       <a class="btn small" href="#contacto" data-magnetic>Pedir presupuesto<span class="arr">→</span></a>
@@ -395,11 +417,11 @@ section{scroll-margin-top:84px}
   </header>
 
   <nav class="mobile-nav" id="mobileNav" hidden aria-label="Menú móvil">
-    <a href="#paquetes">Webs</a>
-    <a href="#mantenimiento">Mantenimiento</a>
+    <a href="/servicios/">Servicios</a>
+    <div class="mobile-sub"><a href="/servicios/diseno-web/">Diseño de páginas web</a><a href="/servicios/tienda-online/">Tienda online</a><a href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a><a href="/servicios/ficha-de-google/">Ficha de Google</a><a href="/servicios/mantenimiento-web/">Mantenimiento web</a><a href="/servicios/gestion-ficha-google/">Gestión de la ficha de Google</a><a href="/servicios/seo-local/">SEO local</a><a href="/servicios/redes-sociales/">Redes sociales</a></div>
     <a href="#fundadores">Oferta de fundador</a>
-    <a href="#proceso">Cómo trabajamos</a>
-    <a href="#contacto">Contacto</a>
+    <a href="/como-trabajamos/">Cómo trabajamos</a>
+    <a href="/contacto/">Contacto</a>
   </nav>
 
   <main id="contenido">
@@ -453,22 +475,22 @@ section{scroll-margin-top:84px}
       </div>
       <ul class="pack-list">
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/diseno-web</span><a class="pack-name pack-link" href="/servicios/diseno-web/">Web corporativa</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/diseno-web/">Web corporativa</a></div>
           <p class="pack-desc">Desde una landing page hasta una web completa con todas las secciones que requiera tu negocio. Adaptada a móvil, con formulario de contacto y analítica configurada.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/tienda-online</span><a class="pack-name pack-link" href="/servicios/tienda-online/">Tienda online</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/tienda-online/">Tienda online</a></div>
           <p class="pack-desc">Tienda preparada para vender: catálogo, carrito, pasarela de pago y gestión de envíos. Incluye formación para que administres tus productos con autonomía.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span><span class="founder-price">Fundador: −25 %</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/ficha-de-google</span><a class="pack-name pack-link" href="/servicios/ficha-de-google/">Ficha de Google</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/ficha-de-google/">Ficha de Google</a></div>
           <p class="pack-desc">Creación y optimización de tu perfil de empresa en Google: categorías, servicios, horarios, fotografías y ubicación. Es la base de la visibilidad en búsquedas locales y en Google Maps.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/desarrollo-a-medida</span><a class="pack-name pack-link" href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/desarrollo-a-medida/">Desarrollo a medida</a></div>
           <p class="pack-desc">Funcionalidades específicas para tu web o tu negocio: reservas y citas online, generación de presupuestos, área de clientes, control de inventario o herramientas de gestión interna.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
@@ -483,22 +505,22 @@ section{scroll-margin-top:84px}
       </div>
       <ul class="pack-list">
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/mantenimiento-web</span><a class="pack-name pack-link" href="/servicios/mantenimiento-web/">Mantenimiento web</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/mantenimiento-web/">Mantenimiento web</a></div>
           <p class="pack-desc">Alojamiento, copias de seguridad, actualizaciones, seguridad y pequeños cambios de contenido cuando los necesites.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/gestion-ficha-google</span><a class="pack-name pack-link" href="/servicios/gestion-ficha-google/">Gestión de la ficha</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/gestion-ficha-google/">Gestión de la ficha</a></div>
           <p class="pack-desc">Publicaciones periódicas, fotografías actualizadas y respuesta a las reseñas para mantener tu ficha de Google activa y mejorar su posición en el mapa.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/seo-local</span><a class="pack-name pack-link" href="/servicios/seo-local/">SEO local</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/seo-local/">SEO local</a></div>
           <p class="pack-desc">Trabajo continuo para mejorar tu visibilidad en las búsquedas de tu zona: contenidos, enlaces, velocidad de carga e informe mensual de resultados.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
         <li class="pack">
-          <div class="pack-head"><span class="pack-tag">/servicios/redes-sociales</span><a class="pack-name pack-link" href="/servicios/redes-sociales/">Redes sociales</a></div>
+          <div class="pack-head"><a class="pack-name pack-link" href="/servicios/redes-sociales/">Redes sociales</a></div>
           <p class="pack-desc">Gestión de dos redes sociales, con entre ocho y doce publicaciones al mes según un calendario acordado contigo.</p>
           <a class="pack-price pack-cta" href="#contacto">Pedir presupuesto <span class="arr">→</span></a>
         </li>
@@ -624,6 +646,8 @@ section{scroll-margin-top:84px}
     <span>© Mirla Studio <span id="year">2026</span> · Diseño web en Murcia y toda la Región · <a href="mailto:hola@mirlastudio.es">hola@mirlastudio.es</a></span>
     <ul>
       <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/como-trabajamos/">Cómo trabajamos</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
       <li><a href="aviso-legal.html">Aviso legal y privacidad</a></li>
     </ul>
   </footer>
